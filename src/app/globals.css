@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+body {
+  position: relative;
+  background-color: #202020;
+  font-family: Helvetica;
+}
