@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import HeroScene from "../scene/HeroScene";
 
 const CanvasSection = () => {
-  const distance = 200;
+  const distance = 700;
   const [Fov, setFov] = useState(75);
 
   const FovCalc = () => {
@@ -29,8 +29,8 @@ const CanvasSection = () => {
         <PerspectiveCamera makeDefault position={[0, 0, distance]} fov={Fov} />
         <HeroScene />
         <OrbitControls
-          // minPolarAngle={Math.PI / 2}
-          // maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2}
           // minPolarAngle={Math.PI / 2 - Math.PI / 6} // up
           // maxPolarAngle={Math.PI / 2 + Math.PI / 6} // down
           enableZoom={false}
