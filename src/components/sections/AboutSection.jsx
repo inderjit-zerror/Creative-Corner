@@ -374,6 +374,23 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
+
+       {/* Reel-5 – Studio‑style hero */}
+      <div className="w-[100vw] h-full flex flex-col justify-center px-8 lg:px-20">
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-light text-[#2c2420] leading-tight tracking-[0.01em]">
+            A Creative Corner is a Silent Luxury Agency
+          </h2>
+          <p className="text-[clamp(0.9rem,1.8vw,1.4rem)] text-gray-600 leading-relaxed">
+            We craft refined social narratives for brands that speak softly and sell powerfully. Strategy, storytelling, and rhythm—down to the scroll.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 pt-4">
+            <span className="px-4 py-1.5 text-xs tracking-[0.1em] text-[#2c2420] border border-[#2c2420]/20 rounded-full">
+              Creative Corner 
+            </span>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   );

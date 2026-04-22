@@ -1,222 +1,137 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+"use client";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    title: 'Influencer Marketing',
-    subtitle: 'Build trust through creators your audience already follows.',
+    number: "01",
+    title: "Brand",
     description:
-      'We identify the right influencers, shape the campaign strategy, and create content that feels authentic while driving brand credibility and impact.',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+      "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
+    image: `/img/about/img1.jpg`,
   },
   {
-    title: 'SEO (Search Engine Optimization)',
-    subtitle: 'Rank higher and get discovered faster.',
+    number: "02",
+    title: "Brand",
     description:
-      'Our SEO systems improve visibility, increase organic traffic, and position your brand where it matters most — at the top of search results.',
-    image: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80',
+      "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
+    image: `/img/about/img2.jpg`,
   },
   {
-    title: 'Website Development & E-Commerce',
-    subtitle: 'Modern websites that look sharp and convert better.',
+    number: "03",
+    title: "Brand",
     description:
-      'We design and develop high-performance websites and e-commerce experiences that scale with your business and help turn visitors into customers.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+      "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
+    image: `/img/about/img3.jpg`,
   },
   {
-    title: 'Video Marketing',
-    subtitle: 'Motion content that captures attention instantly.',
+    number: "04",
+    title: "Brand",
     description:
-      'From concept to execution, we create compelling video content that tells your story, boosts engagement, and leaves a strong impression.',
-    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80',
+      "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
+    image: `/img/about/img4.jpg`,
   },
   {
-    title: 'Social Media Management',
-    subtitle: 'Engage, grow, and convert your community.',
+    number: "05",
+    title: "Brand",
     description:
-      'We handle strategy, content creation, posting, and audience interaction so your brand can build loyalty and turn followers into customers.',
-    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80',
+      "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
+    image: `/img/about/img5.jpg`,
   },
   {
-    title: 'Digital Marketing',
-    subtitle: 'Multi-channel campaigns built for measurable growth.',
+    number: "06",
+    title: "Brand",
     description:
-      'Our targeted campaigns across channels are designed to maximize reach, improve ROI, and drive business growth with clear performance tracking.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    title: 'Cyber Security Services',
-    subtitle: 'Protect your digital presence with confidence.',
-    description:
-      'We safeguard your website, data, and online infrastructure with advanced security solutions that help keep your business secure and trusted.',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80',
+      "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
+    image: `/img/about/img6.jpg`,
   },
 ];
 
-export default function ServicesPage() {
-  const pageRef = useRef(null);
-  const sectionRefs = useRef([]);
-
+const Servicespage = () => {
+  
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.hero-title', {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
+      const cards = gsap.utils.toArray(".serviceCard");
+
+      const ST = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".ServMainCont",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
       });
+      cards.forEach((card, i) => {
+        if (i === 0) return; // first stays base
 
-      gsap.from('.hero-subtitle', {
-        y: 20,
-        opacity: 0,
-        duration: 1,
-        delay: 0.15,
-        ease: 'power3.out',
+        if (i === 5) {
+          ST.to(card, {
+            top: `${1 * 50}%`,
+            ease: "none",
+          });
+        } else {
+          ST.to(card, {
+            top: "0%",
+            ease: "none",
+          });
+        }
       });
+    });
 
-      sectionRefs.current.forEach((el, index) => {
-        if (!el) return;
-
-        const text = el.querySelector('.service-text');
-        const image = el.querySelector('.service-image');
-        const isEven = index % 2 === 0;
-
-        gsap.fromTo(
-          text,
-          { opacity: 0, x: isEven ? -40 : 40 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.9,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 80%',
-            },
-          }
-        );
-
-        gsap.fromTo(
-          image,
-          { opacity: 0, x: isEven ? 40 : -40, scale: 0.98 },
-          {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 1,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 80%',
-            },
-          }
-        );
-      });
-    }, pageRef);
-
-    return () => ctx.revert();
+    return () => ctx.revert(); // cleanup
   }, []);
 
   return (
-    <main ref={pageRef} className="min-h-screen bg-white text-[#111111] pt-10">
-      <section className="mx-auto w-full px-10 py-10 md:px-10 md:py-14">
-        <div className="border-b border-black/15 pb-6 md:pb-8">
-          <p className="hero-title text-[clamp(3rem,8vw,7rem)] leading-none font-light tracking-[-0.06em]">
-            Services
-          </p>
-          <p className="hero-subtitle mt-4 max-w-2xl text-sm md:text-base leading-6 text-black/70">
-            Not just services — smart strategies that work. Every solution is tailored to your
-            brand, audience, and goals to deliver real results.
-          </p>
+    <div className="w-full ServMainCont h-[300vh] relative bg-white">
+      <div className="w-full h-svh sticky top-0 left-0">
+        {/* Name */}
+        <div className="w-full h-[30vh]  p-5">
+          <h1 className="text-[#202020] font-semibold text-[10vw] leading-[10vw]">
+            SERVICES
+          </h1>
         </div>
-      </section>
 
-      <section className="mx-auto w-full px-10 pb-12 md:px-10 md:pb-20">
-        <div className="space-y-0">
-          {services.map((service, index) => (
-            <article
-              key={service.title}
-              ref={(el) => (sectionRefs.current[index] = el)}
-              className="grid grid-cols-1 gap-6 border-b border-black/15 py-8 md:grid-cols-[1.15fr_0.85fr] md:gap-10 md:py-10"
-            >
+        {/* List */}
+        <div className="w-full h-[70vh]  relative flex flex-col">
+          {services.map((item, index) => {
+            return (
               <div
-                className={`service-text flex flex-col justify-between ${
-                  index % 2 === 1 ? 'md:order-2' : ''
-                }`}
+                key={index}
+                style={{ top: `${index * 50}%` }}
+                className={` serviceCard w-full h-1/2 bg-white absolute top-0 left-0 border-t-[1px] border-[#20202021]  flex ServDiv${index + 1}`}
               >
-                <div>
-                  <div className="mb-4 flex items-center gap-3">
-                    <span className="text-xs uppercase tracking-[0.28em] text-black/45">
-                      0{index + 1}
-                    </span>
-                    <span className="h-px flex-1 bg-black/15" />
-                  </div>
-
-                  <h2 className="max-w-2xl text-[clamp(1.6rem,3vw,3rem)] leading-[0.95] font-light tracking-[-0.05em]">
-                    {service.title}
-                  </h2>
-
-                  <p className="mt-4 max-w-xl text-sm md:text-[15px] leading-7 text-black/70">
-                    {service.subtitle}
-                  </p>
-
-                  <p className="mt-5 max-w-xl text-sm md:text-[15px] leading-7 text-black/60">
-                    {service.description}
+                <div className="w-1/4 h-full flex pr-5 py-5">
+                  <p className="text-[2vw] w-[70%] leading-[2vw] text-[#202020]">
+                    {item.number}
                   </p>
                 </div>
-
-                {/* <div className="mt-8 flex items-center gap-3 text-xs uppercase tracking-[0.26em] text-black/55">
-                  <span className="h-px w-10 bg-black/20" />
-                  <span>Learn More</span>
-                </div> */}
-              </div>
-
-              <div
-                className={`service-image ${
-                  index % 2 === 1 ? 'md:order-1' : ''
-                }`}
-              >
-                <div className="group relative aspect-[16/10] overflow-hidden bg-black/5">
+                <div className="w-1/4 h-full flex pr-5 py-5">
+                  <p className="text-[3vw] w-[70%] leading-[3vw] text-[#202020]">
+                    {item.title}
+                  </p>
+                </div>
+                <div className="w-2/4 h-full flex pr-5 py-5">
+                  <p className="text-[16px] w-[70%] leading-[16px] text-[#202020]">
+                    {item.description}
+                  </p>
+                </div>
+                <div className="w-1/4 h-full flex overflow-hidden  p-[5px]">
                   <img
-                    src={service.image}
-                    alt={service.title}
-                    className="h-full w-full object-cover grayscale transition duration-700 group-hover:grayscale-0 group-hover:scale-[1.03]"
+                    src={item.image}
+                    alt="Img"
+                    className="w-full h-full object-center object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/5 transition duration-700 group-hover:bg-black/0" />
                 </div>
               </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
-      </section>
-
-      <section className="mx-auto max-w-[1400px] px-5 pb-14 md:px-10 md:pb-20">
-        <div className="grid gap-6 border-t border-black/15 pt-8 md:grid-cols-3 md:pt-10">
-          <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-black/45">Approach</p>
-            <p className="mt-3 max-w-sm text-sm leading-7 text-black/65">
-              We create custom strategies instead of one-size-fits-all packages.
-            </p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-black/45">Execution</p>
-            <p className="mt-3 max-w-sm text-sm leading-7 text-black/65">
-              Every service is designed to look premium, feel modern, and drive conversions.
-            </p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-black/45">Result</p>
-            <p className="mt-3 max-w-sm text-sm leading-7 text-black/65">
-              Clear growth, stronger visibility, and a brand experience that stands out.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
-}
+};
+
+export default Servicespage;
