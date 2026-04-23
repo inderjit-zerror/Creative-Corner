@@ -10,7 +10,7 @@ const videoData = [
 const WorkSection = () => {
   return (
     <div
-      className={` w-full h-fit relative flex flex-col justify-center items-center bg-[#202020]`}
+      className={` w-full h-fit relative flex flex-col justify-center items-center bg-[#202020] pb-[10vh]`}
     >
       <div className="w-full h-fit flex justify-center items-center sticky top-0 left-0 mix-blend-difference py-10 z-50">
         <h1 className="text-[5vw] leading-[5vw]  text-white">[ WORK. ]</h1>

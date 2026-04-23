@@ -8,42 +8,42 @@ gsap.registerPlugin(ScrollTrigger);
 const services = [
   {
     number: "01",
-    title: "Brand",
+    title: "Influencer Marketing",
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img1.jpg`,
   },
   {
     number: "02",
-    title: "Brand",
+    title: "SEO",
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img2.jpg`,
   },
   {
     number: "03",
-    title: "Brand",
+    title: "Website Development & E-Commerce",
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img3.jpg`,
   },
   {
     number: "04",
-    title: "Brand",
+    title: "Video Marketing",
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img4.jpg`,
   },
   {
     number: "05",
-    title: "Brand",
+    title: "Social Media Management",
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img5.jpg`,
   },
   {
     number: "06",
-    title: "Brand",
+    title: "Digital Marketing",
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img6.jpg`,
@@ -51,7 +51,6 @@ const services = [
 ];
 
 const Servicespage = () => {
-  
   useEffect(() => {
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray(".serviceCard");
@@ -65,11 +64,15 @@ const Servicespage = () => {
         },
       });
       cards.forEach((card, i) => {
-        if (i === 0) return; // first stays base
+        // if (i === 0) return; // first stays base
 
         if (i === 5) {
+          // ST.to(card, {
+          //   top: `${1 * 50}%`,
+          //   ease: "none",
+          // });
           ST.to(card, {
-            top: `${1 * 50}%`,
+            top: `0%`,
             ease: "none",
           });
         } else {
@@ -88,36 +91,43 @@ const Servicespage = () => {
     <div className="w-full ServMainCont h-[300vh] relative bg-white">
       <div className="w-full h-svh sticky top-0 left-0">
         {/* Name */}
-        <div className="w-full h-[30vh]  p-5">
-          <h1 className="text-[#202020] font-semibold text-[10vw] leading-[10vw]">
-            SERVICES
-          </h1>
+
+        <div className="w-full h-[40vh]  p-5">
+          <div className="w-full h-fit flex justify-center items-center  mix-blend-difference py-10 z-50">
+            <h1 className="text-[5vw] leading-[5vw]  text-[#202020]">
+              [ SERVICES. ]
+            </h1>
+          </div>
         </div>
 
         {/* List */}
-        <div className="w-full h-[70vh]  relative flex flex-col">
+        <div className="w-full h-[60vh]  relative flex flex-col">
           {services.map((item, index) => {
             return (
               <div
                 key={index}
-                style={{ top: `${index * 50}%` }}
-                className={` serviceCard w-full h-1/2 bg-white absolute top-0 left-0 border-t-[1px] border-[#20202021]  flex ServDiv${index + 1}`}
+                // style={{ top: `${index * 50}%` }}
+                className={` serviceCard w-full h-full bg-white ${index === 0 ? "top-0" : "top-[100%]"} absolute  left-0 border-t-[1px] border-[#20202021]  flex ServDiv${index + 1}`}
               >
                 <div className="w-1/4 h-full flex pr-5 py-5">
                   <p className="text-[2vw] w-[70%] leading-[2vw] text-[#202020]">
                     {item.number}
                   </p>
                 </div>
-                <div className="w-1/4 h-full flex pr-5 py-5">
+                <div className="w-2/4 h-full flex flex-col pr-5 py-5">
                   <p className="text-[3vw] w-[70%] leading-[3vw] text-[#202020]">
                     {item.title}
                   </p>
-                </div>
-                <div className="w-2/4 h-full flex pr-5 py-5">
-                  <p className="text-[16px] w-[70%] leading-[16px] text-[#202020]">
+                  <div className="w-fullh-full flex pr-5 py-5">
+                  <p className="text-[16px] w-[70%] leading-[16px] mt-5 text-[#202020]">
+                    {item.description}
+                    {item.description}
                     {item.description}
                   </p>
                 </div>
+                </div>
+
+                
                 <div className="w-1/4 h-full flex overflow-hidden  p-[5px]">
                   <img
                     src={item.image}

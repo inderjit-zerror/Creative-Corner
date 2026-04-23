@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
@@ -50,11 +51,11 @@ const AboutSection = () => {
             alt="IMG"
           />
         </div>
-        
+
         {/* Reel-2 */}
         <div className="w-[80vw] h-full flex justify-center items-center">
           <div
-           className="w-full h-[80vh]  py-10 "
+            className="w-full h-[80vh]  py-10 "
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(12, 1fr)",
@@ -271,126 +272,84 @@ const AboutSection = () => {
           />
         </div>
 
-        {/* Reel-4 */}
-        <div className="w-[80vw] h-full flex justify-center items-center">
-          <div className="w-[40vw] h-[80vh]">
-            <div className="relative w-full h-full flex items-center justify-center">
-              {/* CENTER — Script logo */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p
-                  className="text-[clamp(2.5rem,6vw,5rem)] leading-none"
-                  style={{
-                    fontFamily: "'Dancing Script', cursive",
-                    color: "#2c2420",
-                    fontWeight: 600,
-                  }}
-                >
-                  Porter
-                </p>
+        {/* Reel-4 –  */}
+        <div className="w-[100vw] h-[100vh] flex flex-col justify-center px-8 lg:px-20">
+          <section className="bg-white text-neutral-800 h-full  px-6 md:px-16 lg:px-24 py-20">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+              {/* LEFT COLUMN (Images) */}
+              <div className="md:col-span-1 flex flex-col gap-10">
+                <div className="w-full">
+                  <Image
+                    src={`/img/about/img3.jpg`}
+                    alt="coin in hand"
+                    width={400}
+                    height={400}
+                    className="object-cover grayscale"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <Image
+                    src={`/img/about/img4.jpg`}
+                    alt="coin close"
+                    width={400}
+                    height={400}
+                    className="object-cover grayscale"
+                  />
+                </div>
+
+                
               </div>
 
-              {/* TOP CENTER — Arch icon + wordmark */}
-              <div className="absolute top-[8%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[clamp(4px,1vw,10px)]">
-                <ArchIcon size="clamp(28px, 3.5vw, 48px)" />
-                <p
-                  className="tracking-[0.35em] text-[clamp(1.2rem,2.5vw,2.2rem)] font-light"
-                  style={{ color: "#2c2420" }}
-                >
-                  PORTER
-                </p>
-                <p
-                  className="tracking-[0.25em] text-[clamp(0.5rem,1vw,0.85rem)]"
-                  style={{ color: "#2c2420" }}
-                >
-                  VACATION RENTAL
-                </p>
-                <p
-                  className="tracking-[0.25em] text-[clamp(0.5rem,1vw,0.85rem)]"
-                  style={{ color: "#2c2420" }}
-                >
-                  MGMT
-                </p>
-              </div>
+              {/* RIGHT COLUMN (Text Content) */}
+              <div className="md:col-span-2">
+                <div className="max-w-xl ml-auto">
+                 
 
-              {/* BOTTOM CENTER — Large wordmark + est. */}
-              <div className="absolute bottom-[6%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[clamp(2px,0.5vw,6px)]">
-                <p
-                  className="tracking-[0.35em] text-[clamp(1.8rem,4vw,3.8rem)] font-light"
-                  style={{ color: "#2c2420" }}
-                >
-                  PORTER
-                </p>
-                <p
-                  className="tracking-[0.3em] text-[clamp(0.55rem,1.1vw,1rem)]"
-                  style={{ color: "#2c2420" }}
-                >
-                  E. 2020
-                </p>
-              </div>
+                  {/* Paragraphs */}
+                  <div className="space-y-6 text-[15px] leading-[15px] ">
+                    <p>
+                      Every collection should contain mystery. For example, a
+                      thing whose nature, use, or meaning is obscure enough to
+                      be plausibly unknowable.
+                    </p>
 
-              {/* LEFT — Circular badge (Key icon) */}
-              <div className="absolute left-[5%] top-1/2 -translate-y-1/2">
-                <CircleBadge icon="key" />
-              </div>
+                    <p>
+                      My friend Tucker Nichols, a great champion of the
+                      inexplicable, gives a talk called “Meteorightish” about a
+                      rock he found on the beach that he hopes never to learn is
+                      or is not a meteorite.
+                    </p>
 
-              {/* RIGHT — Circular badge (Arch icon) */}
-              <div className="absolute right-[5%] top-1/2 -translate-y-1/2">
-                <CircleBadge icon="arch" />
-              </div>
+                    <p>
+                      This is, as he points out, quite silly, because whenever
+                      or however it got here, it is, was, and always will be (at
+                      least part of) a rock but space on a collision course with
+                      other rocks in space.
+                    </p>
 
-              {/* BOTTOM LEFT — Arch icon + text */}
-              <div className="absolute bottom-[18%] left-[8%] flex flex-col items-center gap-[clamp(2px,0.5vw,6px)]">
-                <ArchIcon size="clamp(20px, 2.5vw, 34px)" />
-                <p
-                  className="tracking-[0.2em] text-[clamp(0.45rem,0.85vw,0.75rem)]"
-                  style={{ color: "#2c2420" }}
-                >
-                  PORTER VRM
-                </p>
-                <p
-                  className="tracking-[0.2em] text-[clamp(0.45rem,0.85vw,0.75rem)]"
-                  style={{ color: "#2c2420" }}
-                >
-                  E. 2020
-                </p>
-              </div>
+                    <p>
+                      But a meteorite, in the site-specific sense of a starry
+                      traveler that has struck Earth, carries a special allure.
+                      Each one being an alien chunk of space-time that
+                      represents the threat of our total annihilation.
+                    </p>
 
-              {/* BOTTOM RIGHT — Key icon + text */}
-              <div className="absolute bottom-[18%] right-[8%] flex flex-col items-center gap-[clamp(2px,0.5vw,6px)]">
-                <KeyIcon size="clamp(20px, 2.5vw, 34px)" />
-                <p
-                  className="tracking-[0.2em] text-[clamp(0.45rem,0.85vw,0.75rem)]"
-                  style={{ color: "#2c2420" }}
-                >
-                  PORTER VRM
-                </p>
-                <p
-                  className="tracking-[0.2em] text-[clamp(0.45rem,0.85vw,0.75rem)]"
-                  style={{ color: "#2c2420" }}
-                >
-                  E. 2020
-                </p>
+                    <p>
+                      Because actual meteorites are supposedly rare, the trick
+                      is to make contact with wonder in things—like Tucker’s
+                      meteor-right-for-him— that are easily found or misread,
+                      but in either case will never let you down by consenting
+                      to be fully understood.
+                    </p>
+
+                   
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
-
-       {/* Reel-5 – Studio‑style hero */}
-      <div className="w-[100vw] h-full flex flex-col justify-center px-8 lg:px-20">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
-          <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-light text-[#2c2420] leading-tight tracking-[0.01em]">
-            A Creative Corner is a Silent Luxury Agency
-          </h2>
-          <p className="text-[clamp(0.9rem,1.8vw,1.4rem)] text-gray-600 leading-relaxed">
-            We craft refined social narratives for brands that speak softly and sell powerfully. Strategy, storytelling, and rhythm—down to the scroll.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 pt-4">
-            <span className="px-4 py-1.5 text-xs tracking-[0.1em] text-[#2c2420] border border-[#2c2420]/20 rounded-full">
-              Creative Corner 
-            </span>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
   );
