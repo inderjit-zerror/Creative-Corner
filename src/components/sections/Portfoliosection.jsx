@@ -19,7 +19,7 @@ const allPortfolioItems = [
 
 const filterOptions = ["All (80)", "Early Stage", "Venture", "Eco Packaging", "Wave Energy", "Design Briefing", "Wind Farm", "Bereavement", "Sustainability", "Deep Tech", "Health", "Manufacturing"];
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 14;
 
 export default function PortfolioSection() {
   const [activeFilter, setActiveFilter] = useState("All (80)");
@@ -37,53 +37,12 @@ export default function PortfolioSection() {
   return (
     <section id="clients" className="min-h-screen bg-white px-8 py-12 font-sans">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-          <h1 className="text-[5vw] leading-[5vw] mx-auto py-[7vh] text-[#202020]">[ Our Clients. ]</h1>
-
-        {/* Filter Dropdown */}
-        {/* <div className="flex items-center gap-0 relative">
-          <button
-            onClick={() => setFilterOpen(!filterOpen)}
-            className="bg-gray-900 text-white text-sm font-medium px-4 py-2 hover:bg-gray-700 transition-colors"
-          >
-            Filter
-          </button>
-          <div className="relative">
-            <button
-              onClick={() => setFilterOpen(!filterOpen)}
-              className="border border-gray-300 text-gray-700 text-sm px-4 py-2 pr-8 bg-white hover:bg-gray-50 transition-colors appearance-none min-w-[140px] text-left"
-            >
-              {activeFilter}
-            </button>
-            <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-xs">▾</span>
-
-            {filterOpen && (
-              <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-gray-200 shadow-lg z-20">
-                {filterOptions.map((opt) => (
-                  <button
-                    key={opt}
-                    onClick={() => {
-                      setActiveFilter(opt);
-                      setVisibleCount(ITEMS_PER_PAGE);
-                      setFilterOpen(false);
-                    }}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
-                      activeFilter === opt
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-700 hover:bg-gray-50"
-                    }`}
-                  >
-                    {opt}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div> */}
+      <div className="flex items-center justify-between mb-8 bg-white">
+          <h1 className="text-[5vw] leading-[5vw] mx-auto py-[7vh] bg-white Text_Color_A">[ Our Clients. ]</h1>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px bg-gray-200">
         {visible.map((item) => (
           <PortfolioCard key={item.id} item={item} />
         ))}

@@ -12,6 +12,8 @@ const services = [
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img1.jpg`,
+    bgC:" #FFE4E4 ",
+    Txt:"#202020"
   },
   {
     number: "02",
@@ -19,6 +21,8 @@ const services = [
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img2.jpg`,
+    bgC:" #FFB3B3  ",
+    Txt:"#202020"
   },
   {
     number: "03",
@@ -26,6 +30,8 @@ const services = [
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img3.jpg`,
+    bgC:"#FF8080 ",
+    Txt:"#202020"
   },
   {
     number: "04",
@@ -33,6 +39,8 @@ const services = [
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img4.jpg`,
+    bgC:" #FF4D4D ",
+    Txt:"#ffffff"
   },
   {
     number: "05",
@@ -40,6 +48,8 @@ const services = [
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img5.jpg`,
+    bgC:" #E60000",
+    Txt:"#ffffff"
   },
   {
     number: "06",
@@ -47,6 +57,8 @@ const services = [
     description:
       "We create engaging brand and campaign identities that resonate with your target audience, from logo design to complete brand experience.",
     image: `/img/about/img6.jpg`,
+    bgC:" #990000 ",
+    Txt:"#ffffff"
   },
 ];
 
@@ -94,7 +106,7 @@ const Servicespage = () => {
 
         <div className="w-full h-[40vh]  p-5">
           <div className="w-full h-fit flex justify-center items-center  mix-blend-difference py-10 z-50">
-            <h1 className="text-[5vw] leading-[5vw]  text-[#202020]">
+            <h1 className="text-[5vw] leading-[5vw]  Text_Color_A">
               [ SERVICES. ]
             </h1>
           </div>
@@ -107,19 +119,23 @@ const Servicespage = () => {
               <div
                 key={index}
                 // style={{ top: `${index * 50}%` }}
-                className={` serviceCard w-full h-full bg-white ${index === 0 ? "top-0" : "top-[100%]"} absolute  left-0 border-t-[1px] border-[#20202021]  flex ServDiv${index + 1}`}
+                style={{
+  backgroundColor: item.bgC,
+  color: item.Txt
+}}
+                className={` serviceCard w-full h-full  ${index === 0 ? "top-0" : "top-[100%]"} absolute  left-0 border-t-[1px] border-[#20202021]  flex ServDiv${index + 1}`}
               >
                 <div className="w-1/4 h-full flex pr-5 py-5">
-                  <p className="text-[2vw] w-[70%] leading-[2vw] text-[#202020]">
+                  <p className="text-[2vw] w-[70%] leading-[2vw] ">
                     {item.number}
                   </p>
                 </div>
                 <div className="w-2/4 h-full flex flex-col pr-5 py-5">
-                  <p className="text-[3vw] w-[70%] leading-[3vw] text-[#202020]">
+                  <p className="text-[3vw] w-[70%] leading-[3vw] ">
                     {item.title}
                   </p>
                   <div className="w-fullh-full flex pr-5 py-5">
-                  <p className="text-[16px] w-[70%] leading-[16px] mt-5 text-[#202020]">
+                  <p className="text-[16px] w-[70%] leading-[16px] mt-5 ">
                     {item.description}
                     {item.description}
                     {item.description}

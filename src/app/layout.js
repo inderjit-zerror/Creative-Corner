@@ -3,6 +3,7 @@ import "./globals.css";
 import CanvasSection from "@/components/common/CanvasSection";
 import LenisProvider from "@/components/common/LenisProvider";
 import Navbar from "@/components/common/NavBar";
+import { ContactProvider } from "@/components/contexts/ContactContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +27,13 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         cz-shortcut-listen="true"
       >
-        <LenisProvider>
-          <CanvasSection />
-          <Navbar/>
-          {children}
-        </LenisProvider>
+        <ContactProvider>
+          <LenisProvider>
+            <CanvasSection />
+            <Navbar />
+            {children}
+          </LenisProvider>
+        </ContactProvider>
       </body>
     </html>
   );

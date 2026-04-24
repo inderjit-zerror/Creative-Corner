@@ -2,10 +2,17 @@
 
 body {
   position: relative;
-  background-color: #202020;
+  background-color: white;
   font-family: Helvetica;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.Text_Color_A{
+  color: #ff0000;
+}
+.Text_Color_B{
+  color: #202020;
 }

@@ -2,11 +2,23 @@
 
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useContact } from "../contexts/ContactContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const tl = useRef(null);
+
+  
+  const { setIsContactOpen } = useContact(); // Get contact state
+
+  // ... existing useEffect code remains the same ...
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    setIsContactOpen(true); // Open contact form
+  };
+
 
   // Initialize GSAP timeline
   useEffect(() => {
@@ -44,7 +56,7 @@ export default function Navbar() {
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8">
             <a href="#home" className="text-white relative group ">
-              Home
+              Index
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
             <a href="#about" className="text-white relative group ">
@@ -52,19 +64,18 @@ export default function Navbar() {
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
             <a href="#services" className="text-white relative group ">
-              Services
-              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
-            </a>
-            <a href="#clients" className="text-white relative group ">
-              Clients
+              Experties
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
             <a href="#work" className="text-white relative group ">
               Work
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
-            <a href="#contact" className="text-white relative group ">
+            <a   href="#contact" className="text-white relative group ">
+              <p onClick={handleContactClick}>
+
               Contact
+              </p>
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
           </div>

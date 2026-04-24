@@ -303,8 +303,8 @@ const AboutSection = () => {
               </div>
 
               {/* RIGHT COLUMN (Text Content) */}
-              <div className="md:col-span-2">
-                <div className="max-w-xl ml-auto">
+              <div className="md:col-span-2  flex justify-center items-center">
+                <div className="max-w-lg h-fit ml-auto  text-justify">
                  
 
                   {/* Paragraphs */}
