@@ -5,3 +5,7 @@ body {
   background-color: #202020;
   font-family: Helvetica;
 }
+
+html {
+  scroll-behavior: smooth;
+}

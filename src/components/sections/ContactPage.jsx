@@ -19,7 +19,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="w-full min-h-screen bg-white text-neutral-800 px-4 sm:px-6 lg:px-20 py-16 lg:py-24 relative z-90">
+    <section id="contact" className="w-full min-h-screen bg-white text-neutral-800 px-4 sm:px-6 lg:px-20 py-16 lg:py-24 relative z-90">
       
       {/* HEADER */}
       <div className="max-w-6xl mx-auto mb-16">

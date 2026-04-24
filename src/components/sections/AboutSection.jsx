@@ -33,6 +33,7 @@ const AboutSection = () => {
 
   return (
     <div
+    id='about'
       ref={mainContainer}
       className="w-full h-screen overflow-x-hidden flex relative bg-white mt-[100vh] pointer-events-none"
     >

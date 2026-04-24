@@ -1,0 +1,160 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const tl = useRef(null);
+
+  // Initialize GSAP timeline
+  useEffect(() => {
+    const menu = menuRef.current;
+    if (!menu) return;
+
+    tl.current = gsap.timeline({ paused: true });
+    tl.current
+      .set(menu, { autoAlpha: 0, y: -20 })
+      .to(menu, { duration: 0.5, autoAlpha: 1, y: 0, ease: "power2.out" });
+
+    return () => {
+      if (tl.current) tl.current.kill();
+    };
+  }, []);
+
+  // Toggle menu with GSAP
+  useEffect(() => {
+    if (!tl.current) return;
+
+    if (isOpen) {
+      tl.current.play();
+    } else {
+      tl.current.reverse();
+    }
+  }, [isOpen]);
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-99 mix-blend-difference  ">
+      <div className="mx-auto w-full sm:px-6 lg:px-8 px-10">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <div className="text-xl font-bold text-white">CC</div>
+
+          {/* Desktop Links */}
+          <div className="hidden md:flex space-x-8">
+            <a href="#home" className="text-white relative group ">
+              Home
+              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+            </a>
+            <a href="#about" className="text-white relative group ">
+              About
+              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+            </a>
+            <a href="#services" className="text-white relative group ">
+              Services
+              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+            </a>
+            <a href="#clients" className="text-white relative group ">
+              Clients
+              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+            </a>
+            <a href="#work" className="text-white relative group ">
+              Work
+              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+            </a>
+            <a href="#contact" className="text-white relative group ">
+              Contact
+              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="md:hidden rounded-lg p-2 text-gray-700 hover:bg-gray-100 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile menu (GSAP animated) */}
+        <div
+          ref={menuRef}
+          className={`md:hidden overflow-hidden ${
+            isOpen ? "block" : "hidden"
+          }`}
+          style={{ display: "none" }}
+        >
+          <div className="flex flex-col space-y-3 py-4 px-4">
+            <a
+              href="#home"
+              className="py-2 text-gray-700  "
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="py-2 text-gray-700  "
+              onClick={() => setIsOpen(false)}
+            >
+              About
+            </a>
+            <a
+              href="#services"
+              className="py-2 text-gray-700  "
+              onClick={() => setIsOpen(false)}
+            >
+              Services
+            </a>
+            <a
+              href="#services"
+              className="py-2 text-gray-700  "
+              onClick={() => setIsOpen(false)}
+            >
+              Work
+            </a>
+            <a
+              href="#services"
+              className="py-2 text-gray-700  "
+              onClick={() => setIsOpen(false)}
+            >
+              Clients
+            </a>
+            <a
+              href="#contact"
+              className="py-2 text-gray-700  "
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}

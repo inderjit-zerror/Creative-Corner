@@ -88,7 +88,7 @@ const Servicespage = () => {
   }, []);
 
   return (
-    <div className="w-full ServMainCont h-[300vh] relative bg-white">
+    <div id="services" className="w-full ServMainCont h-[300vh] relative bg-white">
       <div className="w-full h-svh sticky top-0 left-0">
         {/* Name */}
 
