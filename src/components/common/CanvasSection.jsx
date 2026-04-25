@@ -25,7 +25,7 @@ const CanvasSection = () => {
 
   return (
     <div className="w-full h-svh fixed top-0 left-0 overflow-hidden z-[-1] ">
-      <Canvas className="w-full h-full ">
+      <Canvas className="w-full h-full canvas-container ">
         <PerspectiveCamera makeDefault position={[0, 0, distance]} fov={Fov} />
         <HeroScene />
         <OrbitControls

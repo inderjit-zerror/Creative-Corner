@@ -16,3 +16,8 @@ html {
 .Text_Color_B{
   color: #202020;
 }
+
+
+.canvas-container {
+  touch-action: pan-y !important;
+}

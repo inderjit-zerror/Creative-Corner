@@ -112,7 +112,16 @@ const HeroScene = () => {
   useEffect(() => {
     const updateGeometry = () => {
       // const width = Math.min(window.innerWidth / 25, 25);
-      const width = window.innerWidth / 18;;
+
+       const isMobile = window.innerWidth <= 768;
+       let baseWidth;
+       if (isMobile) {
+    baseWidth = window.innerWidth / 7;     // mobile width
+  } else {
+    baseWidth = window.innerWidth / 18; // caps desktop width at ~25
+  }
+
+      const width = baseWidth;
       const height = width * 1.5;
       setGeometry({ width, height });
     };

@@ -9,7 +9,6 @@ export default function Navbar() {
   const menuRef = useRef(null);
   const tl = useRef(null);
 
-  
   const { setIsContactOpen } = useContact(); // Get contact state
 
   // ... existing useEffect code remains the same ...
@@ -18,7 +17,6 @@ export default function Navbar() {
     e.preventDefault();
     setIsContactOpen(true); // Open contact form
   };
-
 
   // Initialize GSAP timeline
   useEffect(() => {
@@ -47,11 +45,13 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-99 mix-blend-difference  ">
+    <nav className="fixed top-0 left-0 right-0 z-99 sm:mix-blend-difference  ">
       <div className="mx-auto w-full sm:px-6 lg:px-8 px-10">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="text-xl font-bold text-white">CC</div>
+          <div className="text-xl font-bold text-white max-sm:text-[#202020]">
+            CC
+          </div>
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8">
@@ -64,18 +64,15 @@ export default function Navbar() {
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
             <a href="#services" className="text-white relative group ">
-              Experties
+              Expertise
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
             <a href="#work" className="text-white relative group ">
               Work
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
-            <a   href="#contact" className="text-white relative group ">
-              <p onClick={handleContactClick}>
-
-              Contact
-              </p>
+            <a href="#contact" className="text-white relative group ">
+              <p onClick={handleContactClick}>Contact</p>
               <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
           </div>
@@ -111,59 +108,50 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
+      </div>
 
-        {/* Mobile menu (GSAP animated) */}
-        <div
-          ref={menuRef}
-          className={`md:hidden overflow-hidden ${
-            isOpen ? "block" : "hidden"
-          }`}
-          style={{ display: "none" }}
-        >
-          <div className="flex flex-col space-y-3 py-4 px-4">
-            <a
-              href="#home"
-              className="py-2 text-gray-700  "
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="py-2 text-gray-700  "
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </a>
-            <a
-              href="#services"
-              className="py-2 text-gray-700  "
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </a>
-            <a
-              href="#services"
-              className="py-2 text-gray-700  "
-              onClick={() => setIsOpen(false)}
-            >
-              Work
-            </a>
-            <a
-              href="#services"
-              className="py-2 text-gray-700  "
-              onClick={() => setIsOpen(false)}
-            >
-              Clients
-            </a>
-            <a
-              href="#contact"
-              className="py-2 text-gray-700  "
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </a>
-          </div>
+      {/* Mobile menu (GSAP animated) */}
+      <div
+        ref={menuRef}
+        className={`md:hidden overflow-hidden z-999 ${isOpen ? "pointer-events-auto h-svh" : "pointer-events-none h-0"}`}
+        style={{ visibility: "hidden", opacity: 0 }} // Let GSAP take over from here
+      >
+        <div className="flex flex-col w-full h-svh space-y-3 py-4 justify-center items-center px-4 z-999 bg-white ">
+          <a
+            href="#home"
+            className="py-2 text-[red] text-[1.5rem]"
+            onClick={() => setIsOpen(false)}
+          >
+            Index
+          </a>
+          <a
+            href="#about"
+            className="py-2 text-[red] text-[1.5rem]"
+            onClick={() => setIsOpen(false)}
+          >
+            About
+          </a>
+          <a
+            href="#services"
+            className="py-2 text-[red] text-[1.5rem]"
+            onClick={() => setIsOpen(false)}
+          >
+            Expertise
+          </a>
+          <a
+            href="#work"
+            className="py-2 text-[red] text-[1.5rem]"
+            onClick={() => setIsOpen(false)}
+          >
+            Work
+          </a>
+          <a
+            href="#contact"
+            className="py-2 text-[red] text-[1.5rem]"
+            onClick={() => setIsOpen(false)}
+          >
+            <p onClick={handleContactClick}>Contact</p>
+          </a>
         </div>
       </div>
     </nav>

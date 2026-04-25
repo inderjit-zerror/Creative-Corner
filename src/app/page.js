@@ -6,6 +6,7 @@ import Footer from "@/components/sections/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import PortfolioSection from "@/components/sections/Portfoliosection";
 import ServicesPage from "@/components/sections/Servicespage";
+import TestimonialsSection from "@/components/sections/Testimonialssection";
 import WorkSection from "@/components/sections/WorkSection";
 import { useEffect } from "react";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <ServicesPage />
       <PortfolioSection/>
       <WorkSection />
+      <TestimonialsSection/>
       <ContactPage />
       <Footer />
     </>
