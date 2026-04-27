@@ -27,7 +27,9 @@ const MeshMaker = ({ width, height, position, rotation, videoSrc, index }) => {
     video.crossOrigin = "anonymous";
     video.loop = true;
     video.muted = true;
-    video.playsInline = true;
+    video.playsInline = true;      // ✅ Required for iOS
+    video.setAttribute("playsinline", ""); // ✅ Extra safety for older iOS
+    video.setAttribute("webkit-playsinline", "");
     video.preload = "auto";
     video.src = videoSrc;
 
@@ -143,7 +145,7 @@ const HeroScene = () => {
   groupRef.current.position.y = -1000;
 
   gsap.to(groupRef.current.position, {
-    delay:4,
+    delay:3,
     y: 0,
     duration: 2,
     ease: "power3.out",

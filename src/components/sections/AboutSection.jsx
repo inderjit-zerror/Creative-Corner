@@ -616,13 +616,28 @@ const AboutSection = () => {
     };
   }, []);
 
+
+  useEffect(()=>{
+    const PLT1 = gsap.timeline({
+      scrollTrigger:{
+        trigger:scrollContainer.current,
+        start:'top top',
+        end:'top top',
+        scrub:true
+      }
+    })
+    PLT1.to('.AboutLine',{
+      width:'100%'
+    })
+  },[])
+
   return (
     <>
       {/* ─── DESKTOP: horizontal scroll ─── */}
       <div
         id="about"
         ref={mainContainer}
-        className="hidden md:flex w-full h-screen overflow-x-hidden relative bg-white mt-[100vh] pointer-events-none"
+        className="hidden md:flex w-full h-screen aboutDIV overflow-x-hidden relative bg-white mt-[100vh] pointer-events-none"
       >
         <div
           ref={scrollContainer}
@@ -849,7 +864,7 @@ const AboutText = ({ mobile = false }) => (
             mobile ? "w-full" : "max-w-lg ml-auto"
           }`}
         >
-          <div className="space-y-6 text-[15px] leading-[1.6]">
+          <div className="space-y-6 text-[18px] leading-[1.6]">
             <p>
               Every collection should contain mystery. For example, a thing
               whose nature, use, or meaning is obscure enough to be plausibly
@@ -866,19 +881,7 @@ const AboutText = ({ mobile = false }) => (
               part of) a rock but space on a collision course with other rocks
               in space.
             </p>
-            <p>
-              But a meteorite, in the site-specific sense of a starry traveler
-              that has struck Earth, carries a special allure. Each one being
-              an alien chunk of space-time that represents the threat of our
-              total annihilation.
-            </p>
-            <p>
-              Because actual meteorites are supposedly rare, the trick is to
-              make contact with wonder in things—like Tucker's
-              meteor-right-for-him— that are easily found or misread, but in
-              either case will never let you down by consenting to be fully
-              understood.
-            </p>
+            
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useContact } from "../contexts/ContactContext";
+import AnimatedTitle from "./AnimatedTitle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,25 +56,28 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-white relative group ">
-              Index
-              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
-            </a>
+            {/* <a href="#home" className="text-white relative group ">
+              <AnimatedTitle text={'Index'} />
+              <div className="w-0 h-[1px] absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+            </a> */}
             <a href="#about" className="text-white relative group ">
-              About
-              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+              <AnimatedTitle text={'About'} />
+              <div className="w-0 h-[1px] AboutLine absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
             <a href="#services" className="text-white relative group ">
-              Expertise
-              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+              <AnimatedTitle text={'Expertise'} />
+              
+              <div className="w-0 h-[1px] ExpertiseLine absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
             <a href="#work" className="text-white relative group ">
-              Work
-              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+              <AnimatedTitle text={'Work'} />
+              
+              <div className="w-0 h-[1px] WorkLine absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
             <a href="#contact" className="text-white relative group ">
-              <p onClick={handleContactClick}>Contact</p>
-              <div className="w-0 h-[1px] absolute bottom-0 left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
+              
+              <div onClick={handleContactClick}><AnimatedTitle text={'Contact'} /></div>
+              <div className="w-0 h-[1px] Line absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-white group-hover:w-full"></div>
             </a>
           </div>
 
@@ -117,13 +121,13 @@ export default function Navbar() {
         style={{ visibility: "hidden", opacity: 0 }} // Let GSAP take over from here
       >
         <div className="flex flex-col w-full h-svh space-y-3 py-4 justify-center items-center px-4 z-999 bg-white ">
-          <a
+          {/* <a
             href="#home"
             className="py-2 text-[red] text-[1.5rem]"
             onClick={() => setIsOpen(false)}
           >
             Index
-          </a>
+          </a> */}
           <a
             href="#about"
             className="py-2 text-[red] text-[1.5rem]"
