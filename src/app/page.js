@@ -1,6 +1,7 @@
 'use client'
 import PageLoading from "@/components/common/PageLoading";
 import AboutSection from "@/components/sections/AboutSection";
+import BrandingSection from "@/components/sections/BrandingSection";
 import ContactPage from "@/components/sections/ContactPage";
 import Footer from "@/components/sections/Footer";
 import HeroSection from "@/components/sections/HeroSection";

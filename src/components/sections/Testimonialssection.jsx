@@ -245,14 +245,14 @@ export default function TestimonialsSection() {
 
 
   return (
-    <section className="w-full bg-gray-50 py-16 px-4 sm:px-8 overflow-hidden">
+    <section className="w-full bg-gray-50 py-16  px-4 sm:px-8 overflow-hidden">
       {/* Header */}
        {/* Header */}
       <div className="flex items-center justify-between mb-[10vh] ">
           {/* <h1 className="text-[5vw] leading-[5vw] mx-auto pb-[10vh]  Text_Color_A">[ REVIEWS. ]</h1> */}
            <h1
               ref={HeadReviewTextRef}
-              className="text-[5vw] uppercase  mx-auto leading-[5vw] max-sm:text-[10vw] max-sm:leading-[10vw]  Text_Color_A flex overflow-hidden"
+              className="text-[5vw] uppercase Font_Main  mx-auto leading-[5vw] max-sm:text-[10vw] max-sm:leading-[10vw]  Text_Color_A flex overflow-hidden"
               style={{ perspective: "600px" }}
             >
               {HEADING_TEXT_Review.split("").map((char, i) => (
@@ -268,7 +268,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Columns */}
-      <div className="max-w-6xl mx-auto relative">
+      <div className="max-w-6xl mx-auto relative Font_Sec">
         {/* Top fade */}
         <div
           className="absolute top-0 left-0 right-0 z-10 pointer-events-none"

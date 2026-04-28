@@ -46,7 +46,7 @@ import AnimatedTitle from "../common/AnimatedTitle";
 //           </div>
 
 //           {/* Col 2 – Contact */}
-//           <div className="flex flex-col gap-3 text-center  max-sm:mx-auto sm:text-left lg:text-right lg:items-end font-semibold">
+//           <div className="flex flex-col gap-3 text-center  max-sm:mx-auto sm:text-left lg:text-right lg:items-end ">
 //             <AnimatedTitle text={`contact@y2b.global`} />
 //             <AnimatedTitle text={`+14156199045`} />
 //             <AnimatedTitle text={`Address: 101 73rd St, North Bergen`} />
@@ -57,7 +57,7 @@ import AnimatedTitle from "../common/AnimatedTitle";
 //             {["Home", "Works", "Playground", "Contact"].map((item) => (
 //               <div
 //                 key={item}
-//                 className="w-fit h-[1.2rem] text-[1rem] leading-[1.2rem] flex flex-col font-semibold overflow-hidden select-none cursor-pointer"
+//                 className="w-fit h-[1.2rem] text-[1rem] leading-[1.2rem] flex flex-col  overflow-hidden select-none cursor-pointer"
 //               >
 //                 <AnimatedTitle text={item} />
 //               </div>
@@ -71,7 +71,7 @@ import AnimatedTitle from "../common/AnimatedTitle";
 //             ©2025 All Rights Reserved CC.
 //           </p>
 
-//           <div className="w-fit h-[1.1rem] text-[1rem] leading-[1rem] font-semibold flex flex-col overflow-hidden select-none cursor-pointer">
+//           <div className="w-fit h-[1.1rem] text-[1rem] leading-[1rem]  flex flex-col overflow-hidden select-none cursor-pointer">
 //             <AnimatedTitle text={"Instagram"} />
 //           </div>
 //         </div>
@@ -90,7 +90,7 @@ export default function Footer() {
       <section className="flex flex-col lg:flex-row items-start justify-between gap-10 px-6 sm:pt-10 pb-0">
         
         {/* Left: headline */}
-        <h1 className="text-[clamp(1.5rem,2vw,2vw)] leading-[1.1] font-normal text-black max-w-full lg:max-w-[50vw]">
+        <h1 className="text-[clamp(1.5rem,2vw,2vw)] Font_Main leading-[1.1] font-normal text-black max-w-full lg:max-w-[50vw]">
           Social First Content That
           <br />
           Performs, Converts,
@@ -114,7 +114,7 @@ export default function Footer() {
       </section>
 
       {/* ─── FOOTER ───────────────────────────────────────────── */}
-      <footer className="mt-auto bg-white border-t border-gray-200 w-full">
+      <footer className="mt-auto bg-white border-t Font_Main border-gray-200 w-full">
         
         {/* Top Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 py-10">
@@ -127,7 +127,7 @@ export default function Footer() {
           </div>
 
           {/* Col 2 – Contact */}
-          <div className="flex flex-col gap-3 text-center sm:text-left lg:text-right lg:items-end font-semibold">
+          <div className="flex flex-col gap-3 text-center sm:text-left lg:text-right lg:items-end ">
             <AnimatedTitle text={`contact@y2b.global`} />
             <AnimatedTitle text={`+14156199045`} />
             <AnimatedTitle text={`Address: 101 73rd St, North Bergen`} />
@@ -138,7 +138,7 @@ export default function Footer() {
             {["Home", "Works", "Playground", "Contact"].map((item) => (
               <div
                 key={item}
-                className="w-fit h-[1.2rem] text-[1rem] leading-[1.2rem] max-sm:ml-auto flex flex-col font-semibold overflow-hidden select-none cursor-pointer"
+                className="w-fit h-[1.2rem] text-[1rem] leading-[1.2rem] max-sm:ml-auto flex flex-col  overflow-hidden select-none cursor-pointer"
               >
                 <AnimatedTitle text={item} />
               </div>
@@ -152,7 +152,7 @@ export default function Footer() {
             ©2025 All Rights Reserved CC.
           </p>
 
-          <div className="w-fit h-[1.1rem] text-[1rem] leading-[1rem] font-semibold flex flex-col overflow-hidden select-none cursor-pointer">
+          <div className="w-fit h-[1.1rem] text-[1rem] leading-[1rem]  flex flex-col overflow-hidden select-none cursor-pointer">
             <AnimatedTitle text={"Instagram"} />
           </div>
         </div>

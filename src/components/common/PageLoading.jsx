@@ -146,15 +146,15 @@ const PageLoading = () => {
   <h1 className="text-[2.2vw] md:w-1/2 w-full max-sm:text-[6.5vw]  text-center mx-auto">
     <div className="block overflow-hidden relative w-full">
       
-      <div className="line1a text-black w-full text-center">
+      <div className="line1a Font_Main text-black w-full text-center">
         Hi
       </div>
 
-      <div className="line2a translate-y-full absolute inset-0 text-black w-full text-center">
+      <div className="line2a Font_Main translate-y-full absolute inset-0 text-black w-full text-center">
         We’re
       </div>
 
-      <div className="line3a translate-y-full absolute inset-0 text-[#ff0000] w-full text-center">
+      <div className="line3a Font_Main translate-y-full absolute inset-0 text-[#ff0000] w-full text-center">
         Creative Corner
       </div>
 

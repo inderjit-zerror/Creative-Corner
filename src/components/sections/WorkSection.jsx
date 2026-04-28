@@ -48,7 +48,7 @@ const WorkSection = () => {
     id="work"
       className={` w-full h-fit WorkCONTDIV relative flex flex-col justify-center items-center bg-[#202020] pb-[10vh]`}
     >
-      <div className="w-full h-fit flex justify-center items-center sticky top-0 left-0 mix-blend-difference py-10 z-50">
+      <div className="w-full h-fit flex justify-center Font_Main items-center sticky top-0 left-0 mix-blend-difference py-10 z-50">
         <h1 className="text-[5vw] leading-[5vw] max-sm:text-[10vw] max-sm:leading-[10vw]  text-white">[ WORK. ]</h1>
       </div>
       
@@ -65,10 +65,10 @@ const WorkSection = () => {
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            <p className="text-white text-[1.7vw] leading-[1.7vw] max-sm:text-[1.5rem] max-sm:leading-[1.5rem] pt-5 pb-2">
+            <p className="text-white Font_Main text-[1.7vw] leading-[1.7vw] max-sm:text-[1.5rem] max-sm:leading-[1.5rem] pt-5 pb-2">
               Project ~ {index + 1}
             </p>
-            <p className="text-white/60 text-[1vw] leading-[1vw] max-sm:text-[1rem] max-sm:leading-[1rem] pb-5 ">
+            <p className="text-white/60 Font_Sec text-[1vw] leading-[1vw] max-sm:text-[1rem] max-sm:leading-[1rem] pb-5 ">
               Lorem ipsum dolor sit, amet consectetur adipisicing.
             </p>
           </div>

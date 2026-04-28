@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: GS_HEADING;
+  src: url('/fonts/GeneralSans-Semibold.woff');
+}
+@font-face {
+  font-family: GR_Body;
+  src: url('/fonts/Gambetta-Regular.woff');
+}
+
+
+.Font_Main{
+  font-family: GS_HEADING;
+}
+.Font_Sec{
+  font-family: GR_Body;
+}
+
+
 body {
   position: relative;
   background-color: white;

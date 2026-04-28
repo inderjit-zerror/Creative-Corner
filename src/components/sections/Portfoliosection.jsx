@@ -84,7 +84,13 @@ const allPortfolioItems = [
     logo: null,
     style: "text-3xl font-light italic tracking-wide",
   },
-  // { id: 12, name: "FORGE", tag: "Manufacturing", logo: null, style: "uppercase text-2xl font-black tracking-widest" },
+  { id: 12, name: "FORGE", tag: "Manufacturing", logo: null, style: "uppercase text-2xl font-black tracking-widest" },
+{ id: 13, name: "◀ bereev", tag: "Bereavement", logo: null, style: "text-2xl font-medium tracking-wide" },
+{ id: 14, name: "GreenLeaf", tag: "Sustainability", logo: null, style: "text-2xl font-bold tracking-tight" },
+{ id: 15, name: "NOVA", tag: "Deep Tech", logo: null, style: "uppercase text-3xl font-black tracking-[0.3em]" },
+{ id: 16, name: "Bloom", tag: "Health", logo: null, style: "text-3xl font-light italic tracking-wide" },
+{ id: 17, name: "FORGE", tag: "Manufacturing", logo: null, style: "uppercase text-2xl font-black tracking-widest" },
+
 ];
 
 const filterOptions = [
@@ -102,7 +108,7 @@ const filterOptions = [
   "Manufacturing",
 ];
 
-const ITEMS_PER_PAGE = 14;
+const ITEMS_PER_PAGE = 17;
 
 export default function PortfolioSection() {
 
@@ -172,7 +178,7 @@ export default function PortfolioSection() {
         {/* <h1 className="text-[5vw] leading-[5vw] mx-auto py-[7vh] bg-white Text_Color_A">[ Our Clients. ]</h1> */}
         <h1
           ref={HeadCliteTextRef}
-          className="text-[5vw] uppercase  mx-auto leading-[5vw] max-sm:text-[10vw] max-sm:leading-[10vw] Text_Color_A flex overflow-hidden"
+          className="text-[5vw] uppercase Font_Main  mx-auto leading-[5vw] max-sm:text-[10vw] max-sm:leading-[10vw] Text_Color_A flex overflow-hidden"
           style={{ perspective: "600px" }}
         >
           {HEADING_TEXT_Client.split("").map((char, i) => (
