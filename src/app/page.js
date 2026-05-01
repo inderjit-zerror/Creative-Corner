@@ -5,6 +5,7 @@ import BrandingSection from "@/components/sections/BrandingSection";
 import ContactPage from "@/components/sections/ContactPage";
 import Footer from "@/components/sections/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import OrbitalSection from "@/components/sections/OrbitalSection";
 import PortfolioSection from "@/components/sections/Portfoliosection";
 import ServicesPage from "@/components/sections/Servicespage";
 import TestimonialsSection from "@/components/sections/Testimonialssection";
@@ -25,6 +26,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesPage />
+      <OrbitalSection/>
       <PortfolioSection/>
       <WorkSection />
       <TestimonialsSection/>
