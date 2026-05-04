@@ -40,20 +40,19 @@ const AboutSection = () => {
     };
   }, []);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     const PLT1 = gsap.timeline({
-      scrollTrigger:{
-        trigger:scrollContainer.current,
-        start:'top top',
-        end:'top top',
-        scrub:true
-      }
-    })
-    PLT1.to('.AboutLine',{
-      width:'100%'
-    })
-  },[])
+      scrollTrigger: {
+        trigger: scrollContainer.current,
+        start: "top top",
+        end: "top top",
+        scrub: true,
+      },
+    });
+    PLT1.to(".AboutLine", {
+      width: "100%",
+    });
+  }, []);
 
   return (
     <>
@@ -99,14 +98,17 @@ const AboutSection = () => {
             <AboutText />
           </div> */}
 
-          <div className="w-screen h-screen flex-shrink-0 flex items-center justify-center">
-  <InfoAbout/>
-</div>
+          <div className="w-fit h-screen flex-shrink-0 flex items-center justify-center">
+            <InfoAbout />
+          </div>
         </div>
       </div>
 
       {/* ─── MOBILE: vertical stack ─── */}
-      <div id="about" className="flex md:hidden flex-col w-full mt-[100vh] bg-white">
+      <div
+        id="about"
+        className="flex md:hidden flex-col w-full mt-[100vh] bg-white"
+      >
         {/* Video 1 */}
         <div className="w-full h-svh overflow-hidden">
           <video
@@ -153,18 +155,22 @@ const PhotoCollage = ({ mobile = false }) => (
       gridTemplateColumns: "repeat(12, 1fr)",
       gridTemplateRows: "repeat(10, 1fr)",
       width: mobile ? "100%" : "clamp(420px, 58vw, 700px)",
-      height: mobile ? "clamp(340px, 80vw, 480px)" : "clamp(480px, 80vh, 820px)",
+      height: mobile
+        ? "clamp(340px, 80vw, 480px)"
+        : "clamp(480px, 80vh, 820px)",
       gap: "4px",
       position: "relative",
     }}
   >
     {/* "CR" */}
     <div
-      className="hl-word text-[red] Font_Main"
+      className="hl-word Text_Color_A Font_Main"
       style={{
         gridColumn: "1 / 6",
         gridRow: "1 / 4",
-        fontSize: mobile ? "clamp(2rem, 10vw, 3.5rem)" : "clamp(3.5rem, 8vw, 10rem)",
+        fontSize: mobile
+          ? "clamp(2rem, 10vw, 3.5rem)"
+          : "clamp(3.5rem, 8vw, 10rem)",
         display: "flex",
         alignItems: "flex-end",
         paddingBottom: "4px",
@@ -176,11 +182,13 @@ const PhotoCollage = ({ mobile = false }) => (
 
     {/* "EAT" */}
     <div
-      className="hl-word text-[red] Font_Main"
+      className="hl-word Text_Color_A Font_Main"
       style={{
         gridColumn: "6 / 13",
         gridRow: "4 / 7",
-        fontSize: mobile ? "clamp(1.8rem, 9vw, 3rem)" : "clamp(3rem, 7vw, 9rem)",
+        fontSize: mobile
+          ? "clamp(1.8rem, 9vw, 3rem)"
+          : "clamp(3rem, 7vw, 9rem)",
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-end",
@@ -192,11 +200,13 @@ const PhotoCollage = ({ mobile = false }) => (
 
     {/* "IVE" */}
     <div
-      className="hl-word text-[red] Font_Main"
+      className="hl-word Text_Color_A Font_Main"
       style={{
         gridColumn: "1 / 9",
         gridRow: "8 / 11",
-        fontSize: mobile ? "clamp(1.8rem, 9vw, 3rem)" : "clamp(3rem, 7vw, 9rem)",
+        fontSize: mobile
+          ? "clamp(1.8rem, 9vw, 3rem)"
+          : "clamp(3rem, 7vw, 9rem)",
         display: "flex",
         alignItems: "flex-start",
         paddingTop: "4px",
@@ -208,37 +218,104 @@ const PhotoCollage = ({ mobile = false }) => (
 
     {/* Photo 1 */}
     <div style={{ gridColumn: "6 / 13", gridRow: "1 / 4", overflow: "hidden" }}>
-      <img src={`/img/about/img1.jpg`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+      <img
+        src={`/img/about/img1.jpg`}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "grayscale(100%)",
+        }}
+      />
     </div>
 
     {/* Photo 2 */}
     <div style={{ gridColumn: "1 / 7", gridRow: "4 / 7", overflow: "hidden" }}>
-      <img src={`/img/about/img2.jpg`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+      <img
+        src={`/img/about/img2.jpg`}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "grayscale(100%)",
+        }}
+      />
     </div>
 
     {/* Photo 3 */}
     <div style={{ gridColumn: "1 / 6", gridRow: "7 / 11", overflow: "hidden" }}>
-      <img src={`/img/about/img3.jpg`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+      <img
+        src={`/img/about/img3.jpg`}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "grayscale(100%)",
+        }}
+      />
     </div>
 
     {/* Photo 4 */}
     <div style={{ gridColumn: "9 / 13", gridRow: "4 / 8", overflow: "hidden" }}>
-      <img src={`/img/about/img4.jpg`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+      <img
+        src={`/img/about/img4.jpg`}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "grayscale(100%)",
+        }}
+      />
     </div>
 
     {/* Photo 5 */}
-    <div style={{ gridColumn: "6 / 10", gridRow: "7 / 10", overflow: "hidden" }}>
-      <img src={`/img/about/img5.jpg`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+    <div
+      style={{ gridColumn: "6 / 10", gridRow: "7 / 10", overflow: "hidden" }}
+    >
+      <img
+        src={`/img/about/img5.jpg`}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "grayscale(100%)",
+        }}
+      />
     </div>
 
     {/* Photo 6 */}
-    <div style={{ gridColumn: "10 / 13", gridRow: "8 / 11", overflow: "hidden" }}>
-      <img src={`/img/about/img6.jpg`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+    <div
+      style={{ gridColumn: "10 / 13", gridRow: "8 / 11", overflow: "hidden" }}
+    >
+      <img
+        src={`/img/about/img6.jpg`}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "grayscale(100%)",
+        }}
+      />
     </div>
 
     {/* Photo 7 */}
     <div style={{ gridColumn: "6 / 10", gridRow: "5 / 7", overflow: "hidden" }}>
-      <img src={`/img/about/img7.jpg`} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+      <img
+        src={`/img/about/img7.jpg`}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "grayscale(100%)",
+        }}
+      />
     </div>
   </div>
 );
@@ -256,12 +333,10 @@ const AboutText = ({ mobile = false }) => (
       {/* Images column */}
       <div
         className={`flex gap-4 ${
-          mobile
-            ? "flex-row w-full"
-            : "md:col-span-1 flex-col gap-10"
+          mobile ? "flex-row w-full" : "md:col-span-1 flex-col gap-10"
         }`}
       >
-        <div className={mobile ? "w-1/2" : "w-full"}>
+        {/* <div className={mobile ? "w-1/2" : "w-full"}>
           <Image
             src={`/img/about/img3.jpg`}
             alt="coin in hand"
@@ -278,7 +353,7 @@ const AboutText = ({ mobile = false }) => (
             height={400}
             className="object-cover grayscale w-full"
           />
-        </div>
+        </div> */}
       </div>
 
       {/* Text column */}
@@ -294,20 +369,17 @@ const AboutText = ({ mobile = false }) => (
         >
           <div className="space-y-6 text-[18px] leading-[1.6]">
             <p>
-              Every collection should contain mystery. For example, a thing
-              whose nature, use, or meaning is obscure enough to be plausibly
-              unknowable.
-            </p>
-            <p>
-              My friend Tucker Nichols, a great champion of the inexplicable,
-              gives a talk called "Meteorightish" about a rock he found on the
-              beach that he hopes never to learn is or is not a meteorite.
-            </p>
-            <p>
-              This is, as he points out, quite silly, because whenever or
-              however it got here, it is, was, and always will be (at least
-              part of) a rock but space on a collision course with other rocks
-              in space.
+             Welcome to Creative Corner — a passionate team of digital marketing
+          strategists, creatives, and tech-savvy experts dedicated to helping
+          brands thrive in the ever-evolving world of social media and online
+          marketing.
+          <br />
+          <br />
+          Founded with a vision to empower businesses with powerful digital
+          tools, we blend creativity with data-driven strategies to deliver
+          measurable results. Whether you're a startup or a growing enterprise,
+          we craft customized campaigns that speak your brand's language and
+          drive real impact.
             </p>
             
           </div>

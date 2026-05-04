@@ -1,45 +1,14 @@
 "use client";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import SplitText from 'gsap/dist/SplitText';
-import CustomEase from 'gsap/dist/CustomEase';
+import SplitText from "gsap/dist/SplitText";
+import CustomEase from "gsap/dist/CustomEase";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(SplitText, CustomEase);
 
-
 const PageLoading = () => {
-  // useEffect(() => {
-  //   const pre = gsap.timeline();
-
-  //   pre.to(".T_RAp", {
-  //     opacity: "1",
-  //     duration: 1,
-  //     ease: "power3.inOut",
-  //   });
-  //   pre.to(".T_RAp", {
-  //     y: "-24px",
-  //     duration: 1,
-  //     ease: "power3.inOut",
-  //   });
-  //   pre.to(".T_RAp", {
-  //     y: "-48px",
-  //     duration: 1,
-  //     ease: "power3.inOut",
-  //   });
-  //   pre.to(".T_RAp", {
-  //     opacity: 0,
-  //     duration: 1,
-  //     ease: "power3.inOut",
-  //     onComplete: () => {
-  //       gsap.to(".BLSCREEN", {
-  //         opacity: 0,
-  //       });
-  //     },
-  //   });
-  // }, []);
-
   CustomEase.create("custom", "0.77, 0, 0.175, 1");
- 
+
   const container = useRef();
 
   useGSAP(
@@ -120,47 +89,51 @@ const PageLoading = () => {
         },
         "<0.1",
       );
+      // tl.to(".line3a", {
+      //   color: "white",
+      //   ease: "custom",
+      //   duration: 0.8,
+
+      //   onComplete: () => {
+      //   gsap.to(container.current, {
+      //     opacity: 0,
+      //   });
+      // },
+      // });
       tl.to(".line3a", {
-        color: "white",
+        transform: "translateY(-108%)",
         ease: "custom",
         duration: 0.8,
-
-        onComplete: () => {
-        gsap.to(container.current, {
-          opacity: 0,
-        });
-      },
+         onComplete: () => {
+         gsap.to(container.current, {
+           opacity: 0,
+         });
+       },
       });
-      
-
-     
-      
     },
     { scope: container },
   );
   return (
     <div
-  ref={container}
-  className="w-full h-screen fixed flex justify-center items-center top-0 left-0 z-[1000] bg-white pointer-events-none"
->
-  <h1 className="text-[2.2vw] md:w-1/2 w-full max-sm:text-[6.5vw]  text-center mx-auto">
-    <div className="block overflow-hidden relative w-full">
-      
-      <div className="line1a Font_Main text-black w-full text-center">
-        Hi
-      </div>
+      ref={container}
+      className="w-full h-screen fixed flex justify-center items-center top-0 left-0 z-[1000] bg-white pointer-events-none"
+    >
+      <h1 className="text-[2.2vw] md:w-1/2 w-full max-sm:text-[6.5vw]  text-center mx-auto">
+        <div className="block overflow-hidden relative w-full">
+          <div className="line1a Font_Main text-black w-full text-center">
+            Hi
+          </div>
 
-      <div className="line2a Font_Main translate-y-full absolute inset-0 text-black w-full text-center">
-        We’re
-      </div>
+          <div className="line2a Font_Main translate-y-full absolute inset-0 text-black w-full text-center">
+            We’re
+          </div>
 
-      <div className="line3a Font_Main translate-y-full absolute inset-0 text-[#ff0000] w-full text-center">
-        Creative Corner
-      </div>
-
+          <div className="line3a Font_Main translate-y-full absolute inset-0 text-[#ff0000] w-full text-center">
+            Creative Corner
+          </div>
+        </div>
+      </h1>
     </div>
-  </h1>
-</div>
   );
 };
 

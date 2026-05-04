@@ -25,11 +25,11 @@ export default function Home() {
       <PageLoading />
       <HeroSection />
       <AboutSection />
-      <ServicesPage />
       <OrbitalSection/>
-      <PortfolioSection/>
+      <ServicesPage />
       <WorkSection />
-      <TestimonialsSection/>
+      <PortfolioSection/>
+      {/* <TestimonialsSection/> */}
       <ContactPage />
       <Footer />
     </>

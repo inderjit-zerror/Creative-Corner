@@ -145,7 +145,7 @@ const HeroScene = () => {
   groupRef.current.position.y = -1000;
 
   gsap.to(groupRef.current.position, {
-    delay:3,
+    delay:2.5,
     y: 0,
     duration: 2,
     ease: "power3.out",

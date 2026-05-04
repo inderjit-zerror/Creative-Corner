@@ -1,14 +1,27 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import AnimatedTitle from "../common/AnimatedTitle";
 
 const services = [
-  ["Brand architecture", "Brand positioning", "Naming", "Brand strategy", "Brand development"],
-  ["Brand identity", "Brand implementation", "Wayfinding", "Iconography", "Illustration"],
+  [
+    "Brand architecture",
+    "Brand positioning",
+    "Naming",
+    "Brand strategy",
+    "Brand development",
+  ],
+  [
+    "Brand identity",
+    "Brand implementation",
+    "Wayfinding",
+    "Iconography",
+    "Illustration",
+  ],
   ["3D", "Print", "Editorial design", "Type design"],
 ];
 
-export default function BrandingSection({nameDiv, data}) {
+export default function BrandingSection({ nameDiv, data }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -20,7 +33,7 @@ export default function BrandingSection({nameDiv, data}) {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const elements = sectionRef.current?.querySelectorAll(".reveal");
@@ -63,19 +76,16 @@ export default function BrandingSection({nameDiv, data}) {
         }
 
         .category-label {
-          font-family: 'DM Sans', sans-serif;
-          font-size: 13px;
           font-weight: 400;
           letter-spacing: 0.04em;
-          color: #0a0a0a;
           text-transform: none;
         }
 
         .service-item {
-         
-          font-size: 13.5px;
+        
           color: #888;
           font-weight: 400;
+          margin-top: 4px;
           line-height: 1.9;
           transition: color 0.2s ease;
           cursor: default;
@@ -201,84 +211,67 @@ export default function BrandingSection({nameDiv, data}) {
         }
       `}</style>
 
-      <section ref={sectionRef} className={`branding-section w-full px-8 md:px-16 pt-16 pb-20  ${nameDiv} ${data.number === "01"? "top-0":"top-[100%]"} `}>
+      <section
+        ref={sectionRef}
+        className={`branding-section w-full px-8 md:px-5 pt-16 pb-20  ${nameDiv} ${data.number === "01" ? "top-0" : "top-[100%]"} `}
+      >
         {/* Top row */}
-        <div className="flex items-start justify-between mb-0">
+        <div className="flex items-start justify-between mb-0 ">
           {/* Big Number */}
-          <div className="number-reveal reveal" style={{ marginTop: "-12px" }}>
+          <div className="number-reveal mt-auto  reveal max-sm:hidden">
             <span className="number-display Font_Sec">{data.number}</span>
           </div>
 
           {/* Category label top center-ish */}
           <div
-            className="reveal reveal-delay-1"
-            style={{ position: "absolute", left: "26.5%", top: "60px" }}
+            className="reveal reveal-delay-1 mr-auto max-w-[30vw] max-sm:hidden "
+            style={{ position: "absolute", left: "1.5%", top: "10vh" }}
           >
-            <span className="category-label Font_Sec">{data.title}</span>
+            <span className="category-label Text_Color_A  Font_Main text-[3vw] leading-[3vw] uppercase">
+              {data.title}
+            </span>
           </div>
 
           {/* Right side: headline + mock browser */}
-          <div className="flex flex-col gap-8" style={{ maxWidth: "58%", paddingTop: "8px" }}>
+          <div
+            className="flex flex-col gap-8 max-sm:w-full sm:w-[58%] max-sm:pt-[6vh] "
+            // style={{ maxWidth: "58%", paddingTop: "8px" }}
+          >
             {/* Headline */}
-            <h2 className="headline reveal reveal-delay-2 Font_Main">
-             {data.headline}
+
+             <span className="category-label Text_Color_A sm:hidden  text-center Font_Main text-[7vw] leading-[7vw] uppercase">
+              {data.title}
+            </span>
+            
+
+            <h2 className="headline reveal reveal-delay-2 max-sm:text-center Font_Main">
+              {data.headline}
             </h2>
 
             {/* Mock Browser */}
-            <div className="reveal reveal-delay-3" style={{ marginLeft: "2px" }}>
-              <div className="mock-browser">
-                <div className="browser-bar">
-                  <div className="browser-dot" style={{ background: "#ff5f56" }} />
-                  <div className="browser-dot" style={{ background: "#febc2e" }} />
-                  <div className="browser-dot" style={{ background: "#28c840" }} />
-                </div>
-                <div className="browser-content">
-                  {/* Aerial forest image simulation */}
+            <div
+              className="reveal reveal-delay-3   max-sm:justify-center max-sm:items-center"
+              style={{ marginLeft: "2px" }}
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-2xl max-sm:w-full w-[70%]">
+                {data.data.map((stat, index) => (
                   <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      background: "linear-gradient(135deg, #1a3a1a 0%, #2d5a27 40%, #1e4a1e 70%, #0f2a0f 100%)",
-                      opacity: 0.95,
-                    }}
-                  />
-                  <div className="browser-overlay-1" />
-                  <div className="browser-overlay-2" />
-                  <div className="browser-text">
-                    <h3 className="Font_Sec">
-                      {data.subHeadline}
-                    </h3>
-                  </div>
-                  {/* Sidebar UI element */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      top: 0,
-                      bottom: 0,
-                      width: "56px",
-                      background: "rgba(255,255,255,0.06)",
-                      backdropFilter: "blur(4px)",
-                      borderRight: "1px solid rgba(255,255,255,0.08)",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "4px",
-                      padding: "10px 8px",
-                    }}
+                    key={index}
+                    className="bg-[#ED1E24] rounded-sm p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow duration-300"
                   >
-                    {["#f05", "#f90", "#0af", "#8f0", "#f50", "#a0f", "#0fa"].map((c, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          height: "14px",
-                          background: c,
-                          borderRadius: "2px",
-                          opacity: 0.7,
-                        }}
-                      />
-                    ))}
+                    {/* Value + Unit row */}
+                    <div className="flex items-baseline gap-3 max-sm:justify-center">
+                      <span className="text-[3vw] max-sm:text-[5vw] font-black tracking-tight text-white leading-none">
+                        {stat.value}
+                      </span>
+                      <span className="text-sm font-medium text-white uppercase tracking-widest">
+                        {stat.unit}
+                      </span>
+                    </div>
+
+                   
                   </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -290,9 +283,14 @@ export default function BrandingSection({nameDiv, data}) {
               {data.capsules.map((col, ci) => (
                 <ul key={ci}>
                   {col.map((item, ii) => (
-                    <li key={ii} className="service-item Font_Sec">
+                    <div key={ii}>
+                    <li  className="service-item max-sm:hidden flex flex-col gap-2  text-[16px]">
+                      <AnimatedTitle text={item} />
+                    </li>
+                    <li className="service-item sm:hidden flex flex-col gap-2  text-[16px]">
                       {item}
                     </li>
+                    </div>
                   ))}
                 </ul>
               ))}

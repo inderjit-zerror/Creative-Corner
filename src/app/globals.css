@@ -29,13 +29,18 @@ html {
 }
 
 .Text_Color_A{
-  color: #ff0000;
+  color: #ED1E24;
 }
 .Text_Color_B{
   color: #202020;
+}
+
+.BGRED{
+  background-color: #ED1E24;
 }
 
 
 .canvas-container {
   touch-action: pan-y !important;
 }
+

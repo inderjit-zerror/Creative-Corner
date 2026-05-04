@@ -174,8 +174,7 @@ export default function PortfolioSection() {
       className="min-h-screen bg-white px-8 max-sm:px-0 max-sm:pb-0 py-[10vh] font-sans"
     >
       {/* Header */}
-      <div className="flex items-center justify-between mb-[10vh] bg-white">
-        {/* <h1 className="text-[5vw] leading-[5vw] mx-auto py-[7vh] bg-white Text_Color_A">[ Our Clients. ]</h1> */}
+      {/* <div className="flex items-center justify-between mb-[10vh] bg-white">
         <h1
           ref={HeadCliteTextRef}
           className="text-[5vw] uppercase Font_Main  mx-auto leading-[5vw] max-sm:text-[10vw] max-sm:leading-[10vw] Text_Color_A flex overflow-hidden"
@@ -191,7 +190,7 @@ export default function PortfolioSection() {
             </span>
           ))}
         </h1>
-      </div>
+      </div> */}
 
       {/* Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-gray-200 max-sm:bg-white">
@@ -211,7 +210,7 @@ export default function PortfolioSection() {
           />
 
           {/* Red sweep — slides up on hover */}
-          <div className="absolute inset-0 bg-[#FF0000] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
+          <div className="absolute inset-0 bg-[#ED1E24] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
 
         
           {/* Main content */}
@@ -254,7 +253,7 @@ export default function PortfolioSection() {
           </div>
 
           {/* Bottom line */}
-          <div className="absolute bottom-0 left-0 h-[2px] bg-[#FF0000] group-hover:bg-white w-0 group-hover:w-full transition-all duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-10" />
+          <div className="absolute bottom-0 left-0 h-[2px] bg-[#ED1E24] group-hover:bg-white w-0 group-hover:w-full transition-all duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] z-10" />
         </div>
       </div>
 

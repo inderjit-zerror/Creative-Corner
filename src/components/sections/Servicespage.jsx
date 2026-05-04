@@ -6,68 +6,6 @@ import BrandingSection from "./BrandingSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// const services = [
-//   {
-//     number: "01",
-//     title: "Influencer Marketing",
-//     description: "We create engaging brand and campaign identities...",
-//     capsules: [
-//       "Campaign Strategy",
-//       "Creator Outreach",
-//       "Analytics",
-//       "Brand Deals",
-//     ],
-//     image: `/img/about/img1.jpg`,
-//     bgC: "#FFF5F5",
-//     Txt: "#202020",
-//   },
-//   {
-//     number: "02",
-//     title: "Search Engine Optimization",
-//     description: "We create engaging brand and campaign identities...",
-//     capsules: ["On-Page SEO", "Technical SEO", "Backlinks", "Keyword Research"],
-//     image: `/img/about/img2.jpg`,
-//     bgC: "#FFE0E0",
-//     Txt: "#202020",
-//   },
-//   {
-//     number: "03",
-//     title: "Website Development & E-Commerce",
-//     description: "We create engaging brand and campaign identities...",
-//     capsules: ["UI/UX", "Frontend", "Backend", "Shopify", "Performance"],
-//     image: `/img/about/img3.jpg`,
-//     bgC: "#FFCCCC",
-//     Txt: "#202020",
-//   },
-//   {
-//     number: "04",
-//     title: "Video Marketing",
-//     description: "We create engaging brand and campaign identities...",
-//     capsules: ["Editing", "Storyboarding", "Ads", "Reels", "YouTube"],
-//     image: `/img/about/img4.jpg`,
-//     bgC: "#FF9999",
-//     Txt: "#202020",
-//   },
-//   {
-//     number: "05",
-//     title: "Social Media Management",
-//     description: "We create engaging brand and campaign identities...",
-//     capsules: ["Content Plan", "Scheduling", "Engagement", "Insights"],
-//     image: `/img/about/img5.jpg`,
-//     bgC: "#FF4D4D",
-//     Txt: "#ffffff",
-//   },
-//   {
-//     number: "06",
-//     title: "Digital Marketing",
-//     description: "We create engaging brand and campaign identities...",
-//     capsules: ["Ads", "Funnels", "Email", "Automation", "Growth"],
-//     image: `/img/about/img6.jpg`,
-//     bgC: "#FF0000",
-//     Txt: "#ffffff",
-//   },
-// ];
-
 
 const services = [
   {
@@ -82,7 +20,33 @@ const services = [
       ["Campaign strategy", "Influencer research", "Creator partnerships", "Brand collaborations"],
       ["Content planning", "UGC creation", "Reels & short-form", "Platform targeting"],
       ["Performance tracking", "Analytics", "ROI measurement"]
-    ]
+    ],
+    data:[
+  {
+    value: "8+",
+    unit: "years",
+    description:
+      "Experience designing websites for brands across lifestyle, wellness, and professional services industries.",
+  },
+  {
+    value: "120+",
+    unit: "projects",
+    description:
+      "Successfully launched from ideation through complex, custom builds.",
+  },
+  {
+    value: "35+",
+    unit: "happy clients",
+    description:
+      "Many of whom return for new collaborations, referrals, or ongoing design support.",
+  },
+  {
+    value: "99%",
+    unit: "satisfaction",
+    description:
+      "Based on client feedback collected over the last two years.",
+  },
+]
   },
 
   {
@@ -97,7 +61,33 @@ const services = [
       ["Keyword research", "Search intent", "Competitor analysis", "Content gaps"],
       ["On-page SEO", "Technical SEO", "Site audits", "Optimization"],
       ["Link building", "Authority growth", "Search analytics"]
-    ]
+    ],
+    data:[
+  {
+    value: "8+",
+    unit: "years",
+    description:
+      "Experience designing websites for brands across lifestyle, wellness, and professional services industries.",
+  },
+  {
+    value: "120+",
+    unit: "projects",
+    description:
+      "Successfully launched from ideation through complex, custom builds.",
+  },
+  {
+    value: "35+",
+    unit: "happy clients",
+    description:
+      "Many of whom return for new collaborations, referrals, or ongoing design support.",
+  },
+  {
+    value: "99%",
+    unit: "satisfaction",
+    description:
+      "Based on client feedback collected over the last two years.",
+  },
+]
   },
 
   {
@@ -112,7 +102,33 @@ const services = [
       ["UI/UX design", "Wireframing", "Prototyping", "User flows"],
       ["Frontend development", "Backend systems", "API integration"],
       ["E-commerce", "CMS setup", "Performance optimization"]
-    ]
+    ],
+    data:[
+  {
+    value: "8+",
+    unit: "years",
+    description:
+      "Experience designing websites for brands across lifestyle, wellness, and professional services industries.",
+  },
+  {
+    value: "120+",
+    unit: "projects",
+    description:
+      "Successfully launched from ideation through complex, custom builds.",
+  },
+  {
+    value: "35+",
+    unit: "happy clients",
+    description:
+      "Many of whom return for new collaborations, referrals, or ongoing design support.",
+  },
+  {
+    value: "99%",
+    unit: "satisfaction",
+    description:
+      "Based on client feedback collected over the last two years.",
+  },
+]
   },
 
   {
@@ -127,7 +143,33 @@ const services = [
       ["Video strategy", "Storyboarding", "Creative direction"],
       ["Editing", "Motion graphics", "Sound design"],
       ["Ads production", "Reels", "YouTube optimization"]
-    ]
+    ],
+    data:[
+  {
+    value: "8+",
+    unit: "years",
+    description:
+      "Experience designing websites for brands across lifestyle, wellness, and professional services industries.",
+  },
+  {
+    value: "120+",
+    unit: "projects",
+    description:
+      "Successfully launched from ideation through complex, custom builds.",
+  },
+  {
+    value: "35+",
+    unit: "happy clients",
+    description:
+      "Many of whom return for new collaborations, referrals, or ongoing design support.",
+  },
+  {
+    value: "99%",
+    unit: "satisfaction",
+    description:
+      "Based on client feedback collected over the last two years.",
+  },
+]
   },
 
   {
@@ -142,7 +184,33 @@ const services = [
       ["Content planning", "Brand voice", "Visual identity"],
       ["Posting & scheduling", "Platform management"],
       ["Engagement", "Community building", "Insights & reporting"]
-    ]
+    ],
+    data:[
+  {
+    value: "8+",
+    unit: "years",
+    description:
+      "Experience designing websites for brands across lifestyle, wellness, and professional services industries.",
+  },
+  {
+    value: "120+",
+    unit: "projects",
+    description:
+      "Successfully launched from ideation through complex, custom builds.",
+  },
+  {
+    value: "35+",
+    unit: "happy clients",
+    description:
+      "Many of whom return for new collaborations, referrals, or ongoing design support.",
+  },
+  {
+    value: "99%",
+    unit: "satisfaction",
+    description:
+      "Based on client feedback collected over the last two years.",
+  },
+]
   },
 
   {
@@ -157,7 +225,33 @@ const services = [
       ["Paid ads", "Campaign strategy", "Audience targeting"],
       ["Funnels", "Landing pages", "Conversion optimization"],
       ["Email marketing", "Automation", "Growth scaling"]
-    ]
+    ],
+    data:[
+  {
+    value: "8+",
+    unit: "years",
+    description:
+      "Experience designing websites for brands across lifestyle, wellness, and professional services industries.",
+  },
+  {
+    value: "120+",
+    unit: "projects",
+    description:
+      "Successfully launched from ideation through complex, custom builds.",
+  },
+  {
+    value: "35+",
+    unit: "happy clients",
+    description:
+      "Many of whom return for new collaborations, referrals, or ongoing design support.",
+  },
+  {
+    value: "99%",
+    unit: "satisfaction",
+    description:
+      "Based on client feedback collected over the last two years.",
+  },
+]
   }
 ];
 
@@ -241,141 +335,6 @@ const Servicespage = () => {
       className="w-full ServMainCont h-[500vh] relative bg-white"
     >
       <div className="w-full h-svh sticky top-0 left-0 overflow-hidden ">
-        
-        {/* <div className="w-full h-[40vh] max-sm:h-[20vh] flex justify-center items-center p-5">
-          <div className="w-full h-fit flex justify-center items-center mix-blend-difference py-10 max-sm:pt-[8vh] z-50">
-            <h1
-              ref={headingRef}
-              className="text-[5vw] uppercase leading-[5vw] sm:text-[5vw] sm:leading-[5vw] text-[10vw] leading-[10vw] Text_Color_A flex overflow-hidden flex-wrap justify-center"
-              style={{ perspective: "600px" }}
-            >
-              {HEADING_TEXT.split("").map((char, i) => (
-                <span
-                  key={i}
-                  className="char inline-block"
-                  style={{ whiteSpace: char === " " ? "pre" : "normal" }}
-                >
-                  {char}
-                </span>
-              ))}
-            </h1>
-          </div>
-        </div> */}
-
-        {/* Cards */}
-        {/* <div className="w-full h-[60vh] max-sm:h-[80vh] relative flex flex-col">
-          {services.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                backgroundColor: item.bgC,
-                color: item.Txt,
-                top: index === 0 ? "0%" : "100%",
-              }}
-              className="serviceCard w-full h-full absolute left-0 border-t border-[#20202021] flex flex-col sm:flex-row"
-            >
-              
-              <div className="flex sm:hidden w-full h-full max-sm:gap-[5vh] flex-col p-4 gap-2 overflow-hidden">
-                
-                <div className="flex items-start gap-3">
-                  <span
-                    className="text-[5vw] leading-tight font-light shrink-0"
-                    style={{ color: item.Txt }}
-                  >
-                    {item.number}
-                  </span>
-                  <p
-                    className="text-[8vw] leading-tight font-medium"
-                    style={{ color: item.Txt }}
-                  >
-                    {item.title}
-                  </p>
-                </div>
-
-                
-                <p
-                  className="text-[1rem] leading-relaxed opacity-80 line-clamp-3"
-                  style={{ color: item.Txt }}
-                >
-                  {item.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {item.capsules.map((cap, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs border rounded-full"
-                      style={{
-                        borderColor: item.Txt,
-                        color: item.Txt,
-                      }}
-                    >
-                      {cap}
-                    </span>
-                  ))}
-                </div>
-
-              
-                <div className="w-full flex-1 min-h-0 overflow-hidden rounded-sm mt-1">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              </div>
-
-              
-              <div className="hidden sm:flex w-full h-full p-10">
-              
-                <div className="w-1/4 h-full flex ">
-                  <p className="text-[2vw] w-[70%] leading-[2vw]">
-                    {item.number}
-                  </p>
-                </div>
-
-                
-                <div className="w-2/4 h-full flex flex-col ">
-                  <p className="text-[3vw] w-[70%] leading-[3vw]">
-                    {item.title}
-                  </p>
-                  <div className="w-full flex pr-5 py-5">
-                    <p className="text-[16px] w-[70%] leading-relaxed mt-5">
-                      {item.description}
-                      {item.description}
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mt-4 w-[70%]">
-                    {item.capsules.map((cap, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 text-sm border rounded-full"
-                        style={{
-                          borderColor: item.Txt,
-                          color: item.Txt,
-                        }}
-                      >
-                        {cap}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                
-                <div className="w-1/4 h-full flex overflow-hidden ">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-center object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div> */}
-
         {
           services.map((data, index)=>{
             return(

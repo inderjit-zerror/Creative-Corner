@@ -40,20 +40,20 @@ const CanvasSection = () => {
     );
 
     // black fade
-    CTL.to(
-      ".overlay",
-      {
-        opacity: 0.4,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".aboutDIV",
-          start: "top bottom",
-          end: "top 50%",
-          scrub: true,
-        },
-      },
-      "c1",
-    );
+    // CTL.to(
+    //   ".overlay",
+    //   {
+    //     opacity: 0.4,
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: ".aboutDIV",
+    //       start: "top bottom",
+    //       end: "top 50%",
+    //       scrub: true,
+    //     },
+    //   },
+    //   "c1",
+    // );
     
 
     window.addEventListener("resize", FovCalc);
