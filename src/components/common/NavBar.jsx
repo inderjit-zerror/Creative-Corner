@@ -62,22 +62,22 @@ export default function Navbar() {
             </a> */}
             <a href="#about" className="relative group  h-fit  ">
               <AnimatedTitle text={'About'} />
-              <div className="w-0 h-[1px] AboutLine absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-black group-hover:w-full"></div>
+              <div className="w-0 h-[1px] AboutLine absolute bottom-[0] left-0 transition-all duration-200 ease-out bg-black group-hover:w-full"></div>
             </a>
             <a href="#services" className=" relative group h-fit  ">
               <AnimatedTitle text={'Expertise'} />
               
-              <div className="w-0 h-[1px] ExpertiseLine absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-black group-hover:w-full"></div>
+              <div className="w-0 h-[1px] ExpertiseLine absolute bottom-[0] left-0 transition-all duration-200 ease-out bg-black group-hover:w-full"></div>
             </a>
             <a href="#work" className=" relative group h-fit  ">
               <AnimatedTitle text={'Work'} />
               
-              <div className="w-0 h-[1px] WorkLine absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-black group-hover:w-full"></div>
+              <div className="w-0 h-[1px] WorkLine absolute bottom-[0] left-0 transition-all duration-200 ease-out bg-black group-hover:w-full"></div>
             </a>
             <a href="#contact" className=" relative group h-fit  ">
               
               <div onClick={handleContactClick}><AnimatedTitle text={'Contact'} /></div>
-              <div className="w-0 h-[1px] Line absolute bottom-[-12] left-0 transition-all duration-200 ease-out bg-black group-hover:w-full"></div>
+              <div className="w-0 h-[1px] Line absolute bottom-[0] left-0 transition-all duration-200 ease-out bg-black group-hover:w-full"></div>
             </a>
           </div>
 
