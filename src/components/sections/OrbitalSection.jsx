@@ -32,17 +32,17 @@ export default function OrbitalSection() {
     const TL2 = gsap.timeline({
       scrollTrigger: {
         trigger: ".OrbitCont",
-        start: "top top",
-        end:'top -2%',
+        start: "top 20%",
+        end:'top 0%',
         scrub: true,
         toggleActions: 'play reverse play reverse'
       },
     });
-    TL2.to('.StickyContDIV',{backgroundColor:'#ED1E24',ease:'none'},'t2');
-    TL2.to('.TextCustomColor',{color:'white',ease:'none'},'t2');
-    TL2.to('.BorderColor',{borderColor:'#e6e6e6',ease:'none'},'t2');
-    TL2.to('.DisplayDataOrbitDiv',{backgroundColor:'white',ease:'none'},'t2');
-    TL2.to('.DisplayDataOrbitDiv',{color:'#ED1E24',ease:'none'},'t2');
+    TL2.to('.OPS',{opacity:1, ease:'none'},'t2');
+    // TL2.to('.TextCustomColor',{color:'white',ease:'none'},'t2');
+    // TL2.to('.BorderColor',{borderColor:'#e6e6e6',ease:'none'},'t2');
+    // TL2.to('.DisplayDataOrbitDiv',{backgroundColor:'white',ease:'none'},'t2');
+    // TL2.to('.DisplayDataOrbitDiv',{color:'#ED1E24',ease:'none'},'t2');
 
     // =============================================================== Next Animation
     
@@ -55,7 +55,7 @@ export default function OrbitalSection() {
         toggleActions: 'play reverse play reverse'
       },
     });
-    TL3.to('.skeler',{scale:0.0,  stagger: {each: 0.08,from: 'center'},ease:'none'},'t3p');
+    TL3.to('.skeler',{scale:0.0,ease:'none'},'t3p');
     TL3.to('.StickyContDIV',{backgroundColor:'white',ease:'none'},'t3');
     TL3.to('.TextCustomColor',{color:'#ED1E24',ease:'none'},'t3');
     TL3.to('.TextCustomColor',{scale:1.1,ease:'none'});
@@ -63,10 +63,10 @@ export default function OrbitalSection() {
 
   return (
     <div className="w-full h-[200vh] relative flex OrbitCont">
-      <section className=" sticky top-0 left-0 w-full h-screen StickyContDIV bg-[#ffffff] flex items-center justify-center overflow-hidden">
+      <section className=" sticky top-0 left-0 w-full h-screen StickyContDIV BGRED flex items-center justify-center overflow-hidden">
         {/* CENTER TEXT */}
         <div className="absolute text-center z-10 max-w-[420px]">
-          <h1 className="text-black TextCustomColor text-[34px] leading-[44px] font-semibold tracking-tight">
+          <h1 className="text-white TextCustomColor text-[34px] leading-[44px] font-semibold tracking-tight">
             Strategic Social Media
             <br />
             Growth for Today’s
@@ -75,15 +75,15 @@ export default function OrbitalSection() {
           </h1>
         </div>
 
-        <div className="skeler ALLCONT_ANIMATE w-full h-screen flex justify-center scale-[0.7] items-center">
+        <div className="skeler ALLCONT_ANIMATE w-full h-screen flex justify-center scale-[1] items-center">
           {/* INNER DOTTED CIRCLE */}
-          <div className="absolute w-[360px] h-[360px] skeler  BorderColor rounded-full border border-dashed border-black/40"></div>
+          <div className="absolute w-[360px] h-[360px] skeler OPS opacity-0 BorderColor rounded-full border border-dashed border-[#e6e6e6]"></div>
 
           {/* MIDDLE CIRCLE */}
-          <div className="absolute w-[520px] h-[520px] skeler  BorderColor rounded-full border border-black/40"></div>
+          <div className="absolute w-[520px] h-[520px] skeler OPS opacity-0 BorderColor rounded-full border border-[#e6e6e6]"></div>
 
           {/* OUTER CIRCLE */}
-          <div className="absolute w-[720px] h-[720px] skeler  BorderColor rounded-full border border-black/30"></div>
+          <div className="absolute w-[720px] h-[720px] skeler OPS opacity-0  BorderColor rounded-full border border-[#e6e6e6]"></div>
 
           {/* ORBIT ITEMS */}
           <div className="absolute w-[720px] h-[720px] skeler ">
@@ -102,7 +102,7 @@ export default function OrbitalSection() {
                 `,
                   }}
                 >
-                  <div className=" BGRED DisplayDataOrbitDiv  max-w-[200px] flex flex-wrap text-white text-[13px] px-4 py-2 rounded-md shadow-md">
+                  <div className=" bg-white OPS opacity-0 DisplayDataOrbitDiv  max-w-[200px] flex flex-wrap Text_Color_A text-[13px] px-4 py-2 rounded-md shadow-md">
                     {item.text}
                   </div>
                 </div>

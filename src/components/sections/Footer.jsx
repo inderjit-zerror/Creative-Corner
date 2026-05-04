@@ -90,6 +90,10 @@ export default function Footer() {
             ©2025 All Rights Reserved Creative Corner.
           </p>
 
+          <div className="text-xs flex justify-center items-center gap-1 text-white text-center sm:text-left">
+            Developed by <a target="blank" className=" border-b border-white underline" href="https://www.zerrorstudios.com/"> <AnimatedTitle text={'Zerror Studios'} /> </a>
+          </div>
+
           <div className="w-fit text-white h-[1.1rem] text-[1rem] leading-[1rem]  flex flex-col overflow-hidden select-none cursor-pointer">
             <AnimatedTitle text={"Instagram"} />
           </div>

@@ -50,7 +50,7 @@ export default function BrandingSection({ nameDiv, data }) {
 
         .branding-section {
           font-family: 'DM Sans', sans-serif;
-          background: #f8f8f6;
+          background: #ffffff;
           min-height: 100vh;
           // position: relative;
           overflow: hidden;
@@ -68,7 +68,7 @@ export default function BrandingSection({ nameDiv, data }) {
 
         .headline {
           
-          font-size: clamp(28px, 4vw, 62px);
+          // font-size: clamp(28px, 4vw, 62px);
         //   font-weight: 700;
           line-height: 1.08;
           letter-spacing: -0.03em;
@@ -219,13 +219,13 @@ export default function BrandingSection({ nameDiv, data }) {
         <div className="flex items-start justify-between mb-0 ">
           {/* Big Number */}
           <div className="number-reveal mt-auto  reveal max-sm:hidden">
-            <span className="number-display Font_Sec">{data.number}</span>
+            <span className="number-display Font_Main">{data.number}</span>
           </div>
 
           {/* Category label top center-ish */}
           <div
             className="reveal reveal-delay-1 mr-auto max-w-[30vw] max-sm:hidden "
-            style={{ position: "absolute", left: "1.5%", top: "10vh" }}
+            style={{ position: "absolute", left: "1.5%", top: "15vh" }}
           >
             <span className="category-label Text_Color_A  Font_Main text-[3vw] leading-[3vw] uppercase">
               {data.title}
@@ -234,42 +234,53 @@ export default function BrandingSection({ nameDiv, data }) {
 
           {/* Right side: headline + mock browser */}
           <div
-            className="flex flex-col gap-8 max-sm:w-full sm:w-[58%] max-sm:pt-[6vh] "
+            className="flex flex-col  gap-10 max-sm:w-full sm:w-[58%] pt-[8vh] max-sm:pt-[6vh] "
             // style={{ maxWidth: "58%", paddingTop: "8px" }}
           >
             {/* Headline */}
 
-             <span className="category-label Text_Color_A sm:hidden  text-center Font_Main text-[7vw] leading-[7vw] uppercase">
+            <span className="category-label Text_Color_A sm:hidden  text-center Font_Main text-[7vw] leading-[7vw] uppercase">
               {data.title}
             </span>
-            
 
-            <h2 className="headline reveal reveal-delay-2 max-sm:text-center Font_Main">
+            <h2 className="headline reveal reveal-delay-2 text-[3vw] leading-[3vw]   max-sm:text-center Font_Main">
               {data.headline}
             </h2>
 
             {/* Mock Browser */}
             <div
-              className="reveal reveal-delay-3   max-sm:justify-center max-sm:items-center"
+              className="reveal reveal-delay-3 max-sm:justify-center max-sm:items-center"
               style={{ marginLeft: "2px" }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-2xl max-sm:w-full w-[70%]">
                 {data.data.map((stat, index) => (
                   <div
                     key={index}
-                    className="bg-[#ED1E24] rounded-sm p-5 flex flex-col gap-2 shadow-sm hover:shadow-md transition-shadow duration-300"
+                    className="group bg-[#ED1E24] rounded-sm p-5 flex flex-col gap-2 shadow-sm cursor-default relative overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-red-500/30 hover:bg-[#FF2A30]"
                   >
+                    {/* Animated shine sweep on hover */}
+                    <div
+                      className={`absolute inset-0 -translate-x-full group-hover:translate-x-full  bg-gradient-to-r from-transparent via-white/10 to-transparent  transition-transform duration-700 ease-in-out pointer-events-none`}
+                    />
+
+                    {/* Subtle bottom border accent that expands on hover */}
+                    <div
+                      className="absolute bottom-0 left-0 h-[3px] bg-white/40 w-0s  group-hover:w-full transition-all duration-300 ease-out"
+                    />
+
                     {/* Value + Unit row */}
                     <div className="flex items-baseline gap-3 max-sm:justify-center">
-                      <span className="text-[3vw] max-sm:text-[5vw] font-black tracking-tight text-white leading-none">
+                      <span
+                        className="text-[3vw] max-sm:text-[5vw] text-white font-black tracking-tight text-whites    leading-none transition-transform duration-300 group-hover:scale-105 origin-left"
+                      >
                         {stat.value}
                       </span>
-                      <span className="text-sm font-medium text-white uppercase tracking-widest">
+                      <span
+                        className="text-sm font-medium text-white uppercase tracking-widests    transition-all duration-300 group-hover:text-white group-hover:tracking-[0.2em]"
+                      >
                         {stat.unit}
                       </span>
                     </div>
-
-                   
                   </div>
                 ))}
               </div>
@@ -284,12 +295,12 @@ export default function BrandingSection({ nameDiv, data }) {
                 <ul key={ci}>
                   {col.map((item, ii) => (
                     <div key={ii}>
-                    <li  className="service-item max-sm:hidden flex flex-col gap-2  text-[16px]">
-                      <AnimatedTitle text={item} />
-                    </li>
-                    <li className="service-item sm:hidden flex flex-col gap-2  text-[16px]">
-                      {item}
-                    </li>
+                      <li className="service-item max-sm:hidden flex flex-col gap-2  text-[16px]">
+                        <AnimatedTitle text={item} />
+                      </li>
+                      <li className="service-item sm:hidden flex flex-col gap-2  text-[16px]">
+                        {item}
+                      </li>
                     </div>
                   ))}
                 </ul>

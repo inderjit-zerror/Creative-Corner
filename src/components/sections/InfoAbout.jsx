@@ -2,8 +2,8 @@ import React from "react";
 
 const InfoAbout = () => {
   return (
-    <div className="w-[60vw] flex justify-center items-center h-svh relative">
-      <div className="w-[70%] h-fit Text_Color_B text-center text-[1.3vw] text-justify">
+    <div className="w-[100vw] flex BGRED justify-center items-center h-svh relative">
+      <div className="w-[50%] h-fit  text-white text-center text-[1.3vw] text-justify">
         <p>
           Welcome to Creative Corner — a passionate team of digital marketing
           strategists, creatives, and tech-savvy experts dedicated to helping
