@@ -28,9 +28,6 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <Strategic />
-
-      {/* <OrbitalSection/> */}
-      {/* <ServicesPage /> */}
       <WorkSection />
       <PortfolioSection/>
       <ContactPage />

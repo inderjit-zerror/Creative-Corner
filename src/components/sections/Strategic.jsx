@@ -297,7 +297,7 @@ const Strategic = () => {
   }, []);
 
   return (
-    <div className="w-full h-[600vh] relative CONTMAINSTRATEGIC ">
+    <div id="services" className="w-full h-[600vh] relative CONTMAINSTRATEGIC ">
       <div className="w-full h-svh BGRED overflow-hidden sticky top-0 left-0 flex justify-center items-center">
         {/* Center Text */}
         <div className="absolute text-center z-[-4] max-w-[420px]">

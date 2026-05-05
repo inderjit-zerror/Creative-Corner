@@ -271,7 +271,7 @@ const Servicespage = () => {
 
   return (
     <div
-      id="services"
+      
       className="w-full ServMainCont h-[400vh] relative bg-white"
     >
       <div className="w-full h-svh sticky top-0 left-0 overflow-hidden ">
