@@ -1,6 +1,7 @@
 'use client'
 import PageLoading from "@/components/common/PageLoading";
 import AboutSection from "@/components/sections/AboutSection";
+import AboutUs from "@/components/sections/AboutUs";
 import BrandingSection from "@/components/sections/BrandingSection";
 import ContactPage from "@/components/sections/ContactPage";
 import Footer from "@/components/sections/Footer";
@@ -8,6 +9,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import OrbitalSection from "@/components/sections/OrbitalSection";
 import PortfolioSection from "@/components/sections/Portfoliosection";
 import ServicesPage from "@/components/sections/Servicespage";
+import Strategic from "@/components/sections/Strategic";
 import TestimonialsSection from "@/components/sections/Testimonialssection";
 import WorkSection from "@/components/sections/WorkSection";
 import { useEffect } from "react";
@@ -25,11 +27,12 @@ export default function Home() {
       <PageLoading />
       <HeroSection />
       <AboutSection />
-      <OrbitalSection/>
-      <ServicesPage />
+      <Strategic />
+
+      {/* <OrbitalSection/> */}
+      {/* <ServicesPage /> */}
       <WorkSection />
       <PortfolioSection/>
-      {/* <TestimonialsSection/> */}
       <ContactPage />
       <Footer />
     </>

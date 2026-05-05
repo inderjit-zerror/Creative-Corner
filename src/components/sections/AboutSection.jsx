@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import InfoAbout from "./InfoAbout";
+import AboutUs from "./AboutUs";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
@@ -93,14 +94,8 @@ const AboutSection = () => {
             />
           </div>
 
-          {/* Reel-4: text section */}
-          {/* <div className="w-[100vw] h-[100vh] flex flex-col justify-center px-8 lg:px-20">
-            <AboutText />
-          </div> */}
+          <AboutUs/>
 
-          <div className="w-fit h-screen flex-shrink-0 flex items-center justify-center">
-            <InfoAbout />
-          </div>
         </div>
       </div>
 
@@ -139,9 +134,7 @@ const AboutSection = () => {
         </div>
 
         {/* Text section */}
-        <div className="w-full py-12 px-4">
-          <AboutText mobile />
-        </div>
+        <AboutUs />
       </div>
     </>
   );

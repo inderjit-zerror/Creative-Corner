@@ -58,7 +58,7 @@ export default function BrandingSection({ nameDiv, data }) {
 
         .number-display {
          
-          font-size: clamp(50px, 10vw, 320px);
+          font-size: clamp(50px, 8vw, 320px);
        
           line-height: 0.85;
           color: #0a0a0a;
@@ -213,13 +213,13 @@ export default function BrandingSection({ nameDiv, data }) {
 
       <section
         ref={sectionRef}
-        className={`branding-section w-full px-8 md:px-5 pt-16 pb-20  ${nameDiv} ${data.number === "01" ? "top-0" : "top-[100%]"} `}
+        className={`branding-section w-full  px-8 md:px-5 pt-16 z-40 pb-20 abasolute ${nameDiv} top-[100%] left-0 `}
       >
         {/* Top row */}
         <div className="flex items-start justify-between mb-0 ">
           {/* Big Number */}
           <div className="number-reveal mt-auto  reveal max-sm:hidden">
-            <span className="number-display Font_Main">{data.number}</span>
+            <span className="number-display ">{data.number}</span>
           </div>
 
           {/* Category label top center-ish */}
@@ -227,7 +227,7 @@ export default function BrandingSection({ nameDiv, data }) {
             className="reveal reveal-delay-1 mr-auto max-w-[30vw] max-sm:hidden "
             style={{ position: "absolute", left: "1.5%", top: "15vh" }}
           >
-            <span className="category-label Text_Color_A  Font_Main text-[3vw] leading-[3vw] uppercase">
+            <span className="category-label Text_Color_A  Font_Main text-[5vw] leading-[5vw] uppercase">
               {data.title}
             </span>
           </div>
@@ -239,13 +239,16 @@ export default function BrandingSection({ nameDiv, data }) {
           >
             {/* Headline */}
 
+            <div className=" sm:w-full h-fit flex flex-col justify-center items-center max-sm:gap-[2vh]">
+
             <span className="category-label Text_Color_A sm:hidden  text-center Font_Main text-[7vw] leading-[7vw] uppercase">
               {data.title}
             </span>
 
-            <h2 className="headline reveal reveal-delay-2 text-[3vw] leading-[3vw]   max-sm:text-center Font_Main">
+            <h2 className="headline reveal reveal-delay-2 text-[3vw] leading-[3vw] max-sm:text-[5vw] max-sm:leading-[5vw]   max-sm:text-center Font_Main">
               {data.headline}
             </h2>
+            </div>
 
             {/* Mock Browser */}
             <div
@@ -298,7 +301,7 @@ export default function BrandingSection({ nameDiv, data }) {
                       <li className="service-item max-sm:hidden flex flex-col gap-2  text-[16px]">
                         <AnimatedTitle text={item} />
                       </li>
-                      <li className="service-item sm:hidden flex flex-col gap-2  text-[16px]">
+                      <li className="service-item sm:hidden flex flex-col gap-2  text-[13px]">
                         {item}
                       </li>
                     </div>
